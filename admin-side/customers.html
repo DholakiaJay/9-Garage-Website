@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D M G</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="customerDetailsView"></div>
+    <form class="customerform">
+      <button
+        class="closebtn"
+        style="color: red; background-color: white"
+        onclick="closeCustomerForm()"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="form-of-customer-wrapper">
+        <label for="Name">Name</label>
+        <input type="text" placeholder="Enter Name" name="customerName" />
+      </div>
+
+      <div class="form-of-customer-wrapper">
+        <label for="City">City</label>
+        <input type="text" placeholder="Enter City" name="customerCity" />
+      </div>
+
+      <div class="form-of-customer-wrapper">
+        <label for="City">Address</label>
+        <input type="text" placeholder="Enter Address" name="customerAddress" />
+      </div>
+
+      <div class="form-of-customer-wrapper">
+        <label for="Car Name">Car Name</label>
+        <input type="text" placeholder="Car Name" name="customerCarName" />
+      </div>
+
+      <div class="form-of-customer-wrapper">
+        <label for="Car NUmber">Car Number</label>
+        <input type="text" placeholder="Car Number" name="customerCarNumber" />
+      </div>
+
+      <div class="form-of-customer-wrapper">
+        <label for="service">Servcie</label>
+        <select name="service" id="service">
+          <option name="customerService" value="modification">
+            Modification
+          </option>
+          <option name="customerService" value="upgradation">
+            Upgradation
+          </option>
+          <option name="customerService" value="washing">Washing</option>
+          <option name="customerService" value="fullservice">
+            Full Service
+          </option>
+          <option name="customerService" value="generalrepairing">
+            General Repairing
+          </option>
+          <option name="customerService" value="electricalrepairing">
+            Electrical Repairing
+          </option>
+          <option name="customerService" value="enginerepairing">
+            Engine Repairing
+          </option>
+          <option name="customerService" value="maintenance">
+            Maintenance
+          </option>
+          <option name="customerService" value="bodywork">Body Work</option>
+          <option name="customerService" value="repaint">RePaint</option>
+          <option name="customerService" value="puc">PUC</option>
+          <option name="customerService" value="insurance">Insurance</option>
+        </select>
+      </div>
+      <br />
+      <button class="button-37" id="customerAddBtn">Add</button>
+    </form>
+    <!-- Header - Section -->
+    <header>
+      <div class="logo">
+        <a href="#">D M G</a>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/admin-side/work.html">Work</a></li>
+          <li><a href="/admin-side/appointment.html">Appointments</a></li>
+          <li><a href="#">Customers</a></li>
+          <li><a href="#">Payment</a></li>
+          <li><a href="/admin-side/service.html">Services</a></li>
+          <li><a href="/admin-side/about.html">About</a></li>
+          <li><a href="/admin-side/feedback.html">Feedback</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+    <!-- Main - Section -->
+    <main class="main-section">
+      <header>
+        <div class="wraaper-work">
+          <h3>Customer List</h3>
+
+          <span class="functions">
+            <span id="refreshcustomer"
+              ><i class="fa-solid fa-rotate-right"></i
+            ></span>
+            <span id="addcustomer" onclick="addCustomer()"
+              ><i class="fa-solid fa-plus"></i
+            ></span>
+
+            <span id="sharecustomer"
+              ><i class="fa-solid fa-share-nodes"></i
+            ></span>
+          </span>
+        </div>
+
+        <div class="search-container">
+          <input type="text" placeholder="Search..." class="search-bar" />
+          <button class="search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </header>
+
+      <section class="users-container">
+        <div class="users">
+          <div class="user-card">
+            <div class="details-customers">
+              <span>Honda City</span>
+              <span>GJ 03 JA 3699</span>
+              <span>3</span>
+              <span>9</span>
+              <span>Near Alap City Rajkot 360007.</span>
+            </div>
+            <img
+              src="https://elasticbeanstalk-us-east-1-911267631614.s3.amazonaws.com/imagenes/dts/silueta-dirigente.png?pfdrid_c=true"
+              alt="User 1"
+              class="user-avatar"
+            />
+            <h3>Jay</h3>
+            <p>Rajkot</p>
+            <div class="user-actions">
+              <button class="action-btn" onclick="viewDetailsCutomers(event)">
+                View
+              </button>
+              <button class="action-btn" onclick="customerDelete(event)">
+                Delete
+              </button>
+            </div>
+          </div>
+          <div class="user-card">
+            <div class="details-customers">
+              <span>Innova</span>
+              <span>GJ 06 AC 3009</span>
+              <span>1</span>
+              <span>3</span>
+              <span>Near Paravadi Rajkot 360007.</span>
+            </div>
+
+            <img
+              src="https://elasticbeanstalk-us-east-1-911267631614.s3.amazonaws.com/imagenes/dts/silueta-dirigente.png?pfdrid_c=true"
+              alt="User 1"
+              class="user-avatar"
+            />
+            <h3>Jayraj</h3>
+            <p>Rajkot</p>
+            <div class="user-actions">
+              <button class="action-btn" onclick="viewDetailsCutomers(event)">
+                View
+              </button>
+              <button class="action-btn" onclick="customerDelete(event)">
+                Delete
+              </button>
+            </div>
+          </div>
+          <div class="user-card">
+            <div class="details-customers">
+              <span>Jeep</span>
+              <span>GJ 01 AS 0009</span>
+              <span>1</span>
+              <span>1</span>
+              <span>Near Bhutkhana Rajkot 360007.</span>
+            </div>
+
+            <img
+              src="https://elasticbeanstalk-us-east-1-911267631614.s3.amazonaws.com/imagenes/dts/silueta-dirigente.png?pfdrid_c=true"
+              alt="User 1"
+              class="user-avatar"
+            />
+            <h3>Jaydeep</h3>
+            <p>Rajkot</p>
+            <div class="user-actions">
+              <button class="action-btn" onclick="viewDetailsCutomers(event)">
+                View
+              </button>
+              <button class="action-btn" onclick="customerDelete(event)">
+                Delete
+              </button>
+            </div>
+          </div>
+          <div class="user-card">
+            <div class="details-customers">
+              <span>Creta</span>
+              <span>GJ 02 CC 0109</span>
+              <span>6</span>
+              <span>10</span>
+              <span>Near Chabhutra Rajkot 360007.</span>
+            </div>
+
+            <img
+              src="https://elasticbeanstalk-us-east-1-911267631614.s3.amazonaws.com/imagenes/dts/silueta-dirigente.png?pfdrid_c=true"
+              alt="User 1"
+              class="user-avatar"
+            />
+            <h3>Jaykishan</h3>
+            <p>Rajkot</p>
+            <div class="user-actions">
+              <button class="action-btn" onclick="viewDetailsCutomers(event)">
+                View
+              </button>
+              <button class="action-btn" onclick="customerDelete(event)">
+                Delete
+              </button>
+            </div>
+          </div>
+          <div class="user-card">
+            <div class="details-customers">
+              <span>Brezza</span>
+              <span>GJ 03 AJ 1299</span>
+              <span>3</span>
+              <span>12</span>
+              <span>Near Raiya Circle Rajkot 360007.</span>
+            </div>
+
+            <img
+              src="https://elasticbeanstalk-us-east-1-911267631614.s3.amazonaws.com/imagenes/dts/silueta-dirigente.png?pfdrid_c=true"
+              alt="User 1"
+              class="user-avatar"
+            />
+            <h3>Jaynum</h3>
+            <p>Rajkot</p>
+            <div class="user-actions">
+              <button class="action-btn" onclick="viewDetailsCutomers(event)">
+                View
+              </button>
+              <button class="action-btn" onclick="customerDelete(event)">
+                Delete
+              </button>
+            </div>
+          </div>
+          <div class="user-card">
+            <div class="details-customers">
+              <span>Scorpio</span>
+              <span>GJ 05 AC 0225</span>
+              <span>9</span>
+              <span>9</span>
+              <span>Near CV road Rajkot 360007.</span>
+            </div>
+
+            <img
+              src="https://elasticbeanstalk-us-east-1-911267631614.s3.amazonaws.com/imagenes/dts/silueta-dirigente.png?pfdrid_c=true"
+              alt="User 1"
+              class="user-avatar"
+            />
+            <h3>Jaymin</h3>
+            <p>Rajkot</p>
+            <div class="user-actions">
+              <button class="action-btn" onclick="viewDetailsCutomers(event)">
+                View
+              </button>
+              <button class="action-btn" onclick="customerDelete(event)">
+                Delete
+              </button>
+            </div>
+          </div>
+          <div class="user-card">
+            <div class="details-customers">
+              <span>Honda Civic</span>
+              <span>GJ 03 AB 4594</span>
+              <span>2</span>
+              <span>2</span>
+              <span>Near Alap City Rajkot 360007.</span>
+            </div>
+
+            <img
+              src="https://elasticbeanstalk-us-east-1-911267631614.s3.amazonaws.com/imagenes/dts/silueta-dirigente.png?pfdrid_c=true"
+              alt="User 1"
+              class="user-avatar"
+            />
+            <h3>Jai</h3>
+            <p>Rajkot</p>
+            <div class="user-actions">
+              <button class="action-btn" onclick="viewDetailsCutomers(event)">
+                View
+              </button>
+              <button class="action-btn" onclick="customerDelete(event)">
+                Delete
+              </button>
+            </div>
+          </div>
+          <div class="user-card">
+            <div class="details-customers">
+              <span>Indigo CS</span>
+              <span>GJ 03 EC 1484</span>
+              <span>12</span>
+              <span>12</span>
+              <span>Near Patasa Rajkot 360007.</span>
+            </div>
+
+            <img
+              src="https://elasticbeanstalk-us-east-1-911267631614.s3.amazonaws.com/imagenes/dts/silueta-dirigente.png?pfdrid_c=true"
+              alt="User 1"
+              class="user-avatar"
+            />
+            <h3>Jaykishor</h3>
+            <p>Rajkot</p>
+            <div class="user-actions">
+              <button class="action-btn" onclick="viewDetailsCutomers(event)">
+                View
+              </button>
+              <button class="action-btn" onclick="customerDelete(event)">
+                Delete
+              </button>
+            </div>
+          </div>
+          <div class="user-card">
+            <div class="details-customers">
+              <span>Waganor</span>
+              <span>GJ 01 AA 0001</span>
+              <span>0</span>
+              <span>12</span>
+              <span>Near Amin Marg Rajkot 360007.</span>
+            </div>
+
+            <img
+              src="https://elasticbeanstalk-us-east-1-911267631614.s3.amazonaws.com/imagenes/dts/silueta-dirigente.png?pfdrid_c=true"
+              alt="User 1"
+              class="user-avatar"
+            />
+            <h3>Jaynil</h3>
+            <p>City(Area)</p>
+            <div class="user-actions">
+              <button class="action-btn" onclick="viewDetailsCutomers(event)">
+                View
+              </button>
+              <button class="action-btn" onclick="customerDelete(event)">
+                Delete
+              </button>
+            </div>
+          </div>
+          <div class="user-card">
+            <div class="details-customers">
+              <span>Fortuner</span>
+              <span>GJ 09 BB 3333</span>
+              <span>3</span>
+              <span>3</span>
+              <span>Near AB Chowk Rajkot 360007.</span>
+            </div>
+
+            <img
+              src="https://elasticbeanstalk-us-east-1-911267631614.s3.amazonaws.com/imagenes/dts/silueta-dirigente.png?pfdrid_c=true"
+              alt="User 1"
+              class="user-avatar"
+            />
+            <h3>Jake</h3>
+            <p>City(Area)</p>
+            <div class="user-actions">
+              <button class="action-btn" onclick="viewDetailsCutomers(event)">
+                View
+              </button>
+              <button class="action-btn" onclick="customerDelete(event)">
+                Delete
+              </button>
+            </div>
+          </div>
+          <div class="user-card">
+            <div class="details-customers">
+              <span>Corolla</span>
+              <span>GJ 06 CC 1999</span>
+              <span>5</span>
+              <span>7</span>
+              <span>Near SV road Rajkot 360007.</span>
+            </div>
+
+            <img
+              src="https://elasticbeanstalk-us-east-1-911267631614.s3.amazonaws.com/imagenes/dts/silueta-dirigente.png?pfdrid_c=true"
+              alt="User 1"
+              class="user-avatar"
+            />
+            <h3>Jack</h3>
+            <p>City(Area)</p>
+            <div class="user-actions">
+              <button class="action-btn" onclick="viewDetailsCutomers(event)">
+                View
+              </button>
+              <button class="action-btn" onclick="customerDelete(event)">
+                Delete
+              </button>
+            </div>
+          </div>
+          <div class="user-card">
+            <div class="details-customers">
+              <span>B M W</span>
+              <span>GJ 03 JD 3699</span>
+              <span>3</span>
+              <span>9</span>
+              <span>Near Raiya Rajkot 360007.</span>
+            </div>
+
+            <img
+              src="https://elasticbeanstalk-us-east-1-911267631614.s3.amazonaws.com/imagenes/dts/silueta-dirigente.png?pfdrid_c=true"
+              alt="User 1"
+              class="user-avatar"
+            />
+            <h3>James</h3>
+            <p>City(Area)</p>
+            <div class="user-actions">
+              <button class="action-btn" onclick="viewDetailsCutomers(event)">
+                View
+              </button>
+              <button class="action-btn" onclick="customerDelete(event)">
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer - Section -->
+    <!-- <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <p>&copy; 2024 MyWebsite. All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </footer> -->
+
+    <script src="/index.js"></script>
+  </body>
+</html>
