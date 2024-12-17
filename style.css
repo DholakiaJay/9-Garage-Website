@@ -85,18 +85,6 @@ nav ul li a:hover {
   }
 }
 /* Main */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  line-height: 1.6;
-}
-
 main {
   max-width: 1200px;
   margin: 0 auto;
@@ -104,20 +92,20 @@ main {
   background-color: #fff;
 }
 
-header {
+main header {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-header h1 {
+main header h1 {
   font-size: 2.5rem;
   color: #e0e0e0;
 }
-header h3 {
+main header h3 {
   color: #e0e0e0;
 }
 
-header p {
+main header p {
   font-size: 1.2rem;
   color: #666;
 }
@@ -159,11 +147,11 @@ header p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  header h1 {
+  main header h1 {
     font-size: 2rem;
   }
 
-  header p {
+  main header p {
     font-size: 1rem;
   }
 
@@ -276,29 +264,8 @@ header p {
 }
 /* Customers */
 /* Reset default styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  
-}
 
 /* Header Styling */
-header {
-  text-align: center;
-  padding: 2rem;
-  background-color: #333;
-  color: white;
-}
-
-header h1 {
-  font-size: 2.5rem;
-}
 
 /* Users Section */
 .users-container,
@@ -306,8 +273,6 @@ header h1 {
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  
-  
 }
 
 /* User Cards Grid */
@@ -316,9 +281,7 @@ header h1 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1.5rem;
-  
 }
-
 
 .user-card,
 .service-card {
@@ -344,14 +307,15 @@ header h1 {
   margin-bottom: 1rem;
   object-fit: cover;
 }
-
-h3 {
+.users h3,
+.services h3 {
   font-size: 1.2rem;
   color: #333;
   margin-bottom: 0.5rem;
 }
 
-p {
+.users p,
+.services p {
   font-size: 1rem;
   color: #666;
   margin-bottom: 1rem;
@@ -381,7 +345,7 @@ p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  header h1 {
+  .main-section header h1 {
     font-size: 2rem;
   }
 
@@ -512,10 +476,10 @@ p {
   text-align: center;
 }
 
-.team-member img {  
+.team-member img {
   height: 120px;
   width: 120px;
-  border:3px solid transparent;
+  border: 3px solid transparent;
   border-radius: 50%;
   margin-bottom: 10px;
 }
@@ -536,7 +500,7 @@ p {
     display: none;
   }
 
-  header {
+  .main-section header {
     text-align: center;
   }
 
@@ -614,11 +578,12 @@ p {
   background-color: #13aa52;
   border: 1px solid #13aa52;
   border-radius: 4px;
-  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
-  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont,
+    sans-serif;
   font-size: 16px;
   font-weight: 400;
   outline: none;
@@ -634,7 +599,7 @@ p {
 
 .button-37:hover {
   transition: all 300ms;
-  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
   transform: translateY(-2px);
   background-color: #0056b3;
   color: white;
@@ -699,8 +664,7 @@ p {
 }
 
 .user-message .message-content {
-
-  background-color:#dcf8c6;
+  background-color: #dcf8c6;
   color: black;
 }
 
@@ -876,10 +840,10 @@ h2 {
   background-color: white;
   padding: 6px 12px;
   border-radius: 12px;
-  
 }
 
-.feedback-delete:hover, .feedback-love:hover {
+.feedback-delete:hover,
+.feedback-love:hover {
   transition: all 300ms;
   background-color: black;
   color: white;
@@ -887,8 +851,6 @@ h2 {
 
 /* Cutomer Card */
 .card {
-  
-  
   position: absolute;
   top: 10%;
   left: 40%;
@@ -909,7 +871,7 @@ h2 {
 .card-header {
   width: 100%;
   height: 150px;
-  background-color:#333;
+  background-color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -965,81 +927,72 @@ h2 {
 /* Media query for smaller screens */
 @media screen and (max-width: 768px) {
   .card {
-      width: 90%;
-      max-width: 400px;
+    width: 90%;
+    max-width: 400px;
   }
 
   .card-header img {
-      width: 80px;
-      height: 80px;
+    width: 80px;
+    height: 80px;
   }
 
   .card-body h2 {
-      font-size: 20px;
+    font-size: 20px;
   }
 
   .card-body .title {
-      font-size: 14px;
+    font-size: 14px;
   }
 
   .card-body p {
-      font-size: 12px;
+    font-size: 12px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .card {
-      width: 100%;
-      max-width: 300px;
+    width: 100%;
+    max-width: 300px;
   }
 
   .card-header img {
-      width: 70px;
-      height: 70px;
+    width: 70px;
+    height: 70px;
   }
 
   .card-body h2 {
-      font-size: 18px;
+    font-size: 18px;
   }
 
   .card-body .title {
-      font-size: 12px;
+    font-size: 12px;
   }
 
   .card-body p {
-      font-size: 10px;
+    font-size: 10px;
   }
 }
-.details-customers
-{
+.details-customers {
   display: none;
-
 }
-.customercarddetails
-{
+.customercarddetails {
   display: flex;
   flex-direction: column;
   font-size: small;
   justify-content: center;
   gap: 12px;
   align-items: center;
-
 }
-.customercarddetails span
-{
+.customercarddetails span {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 12px;
-  
 }
-.customercarddetails span .cardtitle
-{
+.customercarddetails span .cardtitle {
   color: grey;
 }
-.customerDetailsView
-{
-
+.customerDetailsView {
   height: 100vh;
   width: 100vw;
   background-color: white;
@@ -1047,8 +1000,7 @@ h2 {
   z-index: 1;
   display: none;
 }
-.closecardbtn
-{
+.closecardbtn {
   background-color: #333;
   display: flex;
   color: white;
@@ -1059,18 +1011,15 @@ h2 {
   padding: 10px;
   border: none;
   outline: none;
-    
 }
-.closecardbtn:hover
-{
+.closecardbtn:hover {
   border: none;
   outline: none;
   transition: all 300ms;
   color: red;
 }
 /* Customer Form  */
-.customerform
-{
+.customerform {
   background-color: hsla(0, 0%, 100%, 0.818);
   backdrop-filter: blur(9px);
   padding: 10px 20px;
@@ -1078,34 +1027,106 @@ h2 {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   border-radius: 12px;
   position: absolute;
-  border:1px solid silver;
+  border: 1px solid silver;
   left: 30%;
   top: 21%;
   z-index: 1;
   overflow: auto;
   display: none;
 }
-.form-of-customer-wrapper
-{
+.form-of-customer-wrapper {
   width: 100%;
   display: flex;
   justify-content: space-between;
   gap: 12px;
   align-items: center;
   padding: 10px 20px;
+}
+.form-of-customer-wrapper input {
+  border: 1px solid #333;
+  outline: none;
+  width: 80%;
+  padding: 10px;
+}
+.form-of-customer-wrapper select {
+  border: 1px solid #333;
+  outline: none;
+  width: 80%;
+  padding: 10px;
+}
+
+/* Service Edit  */
+
+.service-view {
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  position: absolute;
+  border: 1px solid black;
+  display: none;
+}
+.service-dec {
+  display: none;
   
 }
-.form-of-customer-wrapper input
-{
-  border: 1px solid #333;
-  outline: none;
-  width: 80%;
-  padding: 10px;
+
+/* Service Form */
+.service-Form-container {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.833);
+  backdrop-filter: blur(9px);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.form-of-customer-wrapper select
-{
-  border: 1px solid #333;
+
+.service-Form-container .form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.service-Form-container .form form {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: 1px solid whitesmoke;
+  background-color: rgba(255, 255, 255, 0.622);
+}
+
+.service-Form-container .form form input,
+.service-Form-container .form form textarea {
+  border: none;
   outline: none;
-  width: 80%;
-  padding: 10px;
+  border: 1px solid silver;
+  border-radius: 0.3rem;
+  height: 1.8rem;
+}
+
+.service-Form-container .form form input::placeholder,
+.service-Form-container .form form textarea::placeholder {
+  text-align: center;
+}
+
+.service-Form-container .form form button {
+  padding: 0.9rem 2.1rem;
+  width: fit-content;
+  align-self: center;
+  border: none;
+  outline: none;
+  border-radius: 0.3rem;
+  background-color: rgb(7, 106, 172);
+  color: white;
+  transition: all 300ms;
+}
+
+.service-Form-container .form form button:hover {
+  background-color: black;
+  color: white;
 }

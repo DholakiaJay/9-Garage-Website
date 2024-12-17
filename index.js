@@ -47,7 +47,7 @@ function sendMSG() {
     newEle = document.createElement("div");
     newEle.classList.add("message", "bot-message");
     newEle.innerHTML = `
-    <div class="message-content">
+    <div class="message-content" style="margin-top:10px;">
       <p>${msg.value}</p>
     </div>
   `;
@@ -182,7 +182,7 @@ customerAddBtn.addEventListener("click", (e) => {
 
   newEle = document.createElement("div");
   newEle.classList.add("user-card");
-  newEle.style.cssText = `border:1px solid silver; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;`;
+  newEle.style.cssText = `border:1px solid silver; box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 5px;`;
 
   newEle.innerHTML = `
      
@@ -197,7 +197,7 @@ customerAddBtn.addEventListener("click", (e) => {
               </div>
               
               <img
-                src="https://elasticbeanstalk-us-east-1-911267631614.s3.amazonaws.com/imagenes/dts/silueta-dirigente.png?pfdrid_c=true"
+                src="/images/profile.png"
                 alt="User 1"
                 class="user-avatar"
               />
@@ -226,14 +226,113 @@ function closeCustomerForm() {
 
 // Feedbacknoti
 
- 
-function updateFdNoti()
-{
-  
-feedbackNoti =  document.getElementById('feedbacknoti');
-fbList =  document.getElementById('fblist');
-console.log(fbList.childElementCount);
-feedbackNoti.innerText = fbList.childElementCount;
+function updateFdNoti() {
+  feedbackNoti = document.getElementById("feedbacknoti");
+  fbList = document.getElementById("fblist");
+  console.log(fbList.childElementCount);
+  feedbackNoti.innerText = fbList.childElementCount;
+}
 
+// Services
+function serviceViewPage(event) {
+  backServciePage = document.getElementsByClassName("service-container")[0];
+  backServciePage.style.cssText = `display:none`;
+  page = document.getElementsByClassName("service-view")[0];
+  page.style.cssText = `z-index:1; display:flex; justify-content:center; align-items:center;`;
+  e = event.target.parentElement.parentElement.childElementCount;
+  serviceImg = event.target.parentElement.parentElement.children[0];
+  serviceName = event.target.parentElement.parentElement.children[1];
+  servcieDec = event.target.parentElement.parentElement.children[2];
 
+  newEle = document.createElement("div");
+  newEle.innerHTML = `
+       <div class="card">
+       
+      <button class="closecardbtn" onclick="closeServiceBox()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="card-header">
+          <img src="${serviceImg.getAttribute("src")}" alt="Profile Picture">
+      </div>
+      <div class="card-body">
+          <h2>${serviceName.textContent}</h2>
+          <p class="title">${servcieDec.innerHTML}</p>        
+      </div>
+  </div>
+
+   `;
+  page.append(newEle);
+}
+
+function closeServiceBox() {
+  backServciePage = document.getElementsByClassName("service-container")[0];
+  backServciePage.style.cssText = `display:inital`;
+  page = document.getElementsByClassName("service-view")[0];
+  page.style.cssText = ` z-index:-1; display:none;`;
+}
+
+// Service Delete
+function serviceDelete(event) {
+  e = event.target.parentElement.parentElement;
+  e.style.cssText = `display:none;`;
+}
+
+function addService() {
+  serviceCon = document.getElementsByClassName("services")[0];
+  serviceCon.style.cssText = `display:none;`;
+
+  serviceForm = document.getElementsByClassName("service-Form-container")[0];
+  serviceForm.style.cssText = `
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  `;
+
+  addserviceButton = document.getElementById("addservcieButton");
+  addserviceButton.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    serviceImg = document.getElementsByName("serviceImg")[0];
+    serviceName = document.getElementsByName("serviceName")[0];
+    serviceDec = document.getElementsByName("serviceDec")[0];
+    serviceCharge = document.getElementsByName("serviceCharge")[0];
+
+    newEle = document.createElement("div");
+    newEle.classList.add("service-card");
+    newEle.innerHTML = `
+            <img
+              src="${serviceImg.value}"
+              alt="User 1"
+              class="service-avatar"
+            />
+            <h3>${serviceName.value}</h3>
+            <div class="service-dec">
+              ${serviceDec.value}
+              <p><b>₹ ${serviceCharge.value}/-</b></p>
+            </div>
+
+            <div class="service-actions">
+              <button class="action-btn" onclick="serviceViewPage(event)">
+                Edit
+              </button>
+              <button class="action-btn" onclick="serviceDelete(event)">
+                Delete
+              </button>
+            </div>
+     
+
+    `;
+
+    serviceCon.prepend(newEle);
+    serviceForm = document.getElementsByClassName("service-Form-container")[0];
+    serviceForm.style.cssText = `display:none;`;
+    serviceCon.style.cssText = `display:grid;`;
+  });
+}
+function closeServiceButton() {
+  serviceForm = document.getElementsByClassName("service-Form-container")[0];
+  serviceForm.style.cssText = `display:none`;
+
+  serviceCon = document.getElementsByClassName("services")[0];
+  serviceCon.style.cssText = `display:grid`;
 }
