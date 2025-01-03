@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Container with Search Bar</title>
+    <style>
+      /* General reset for margin and padding */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      
+      /* Make the search bar responsive */
+      .search-container {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .search-bar {
+        width: 30%;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      .container {
+        
+        position: relative;
+        height: 72vh;
+        width: 72vw;
+        margin: 21px auto;
+        border-radius: 12px;
+        /* background-color: whitesmoke; */
+        background-color: #282828;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+      }
+
+      .content {
+        height: 90px;
+        width: 90px;
+        backdrop-filter: blur(1px);
+        text-align: center;
+        border: 2px solid transparent;
+      }
+      .search-icon {
+        background-color: #ccc;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+
+      .search-icon:hover {
+        background-color: #aaa;
+      }
+
+      /* Responsive behavior */
+      @media screen and (max-width: 768px) {
+        .container {
+          width: 80vw;
+          height: 40vh;
+        }
+
+        .search-bar {
+          width: 90%;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .container {
+          width: 90vw;
+          height: 30vh;
+        }
+
+        .search-bar {
+          width: 95%;
+        }
+      }
+
+      .content img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+      .content img:hover {
+        transition: all 630ms;
+        transform: scale(1.14);
+        /* filter: brightness(50%); */
+        
+        filter: drop-shadow(3px 3px 3px rgb(47, 41, 41));
+      }
+      .content:hover
+      {
+        transition: all 630ms;
+
+      }
+      #car-1 
+      {
+        position: absolute;
+        bottom: 0.9%;
+        left: 0.9%;  
+      }
+      #car-2 
+      {
+        position: absolute;
+        left: 1.8%;  
+      }
+      #car-3 
+      {
+        position: absolute;
+        left: 10.8%;  
+      }
+      #car-4 
+      {
+        position: absolute;
+        left: 18.9%;  
+      }
+      #car-5 
+      {
+        position: absolute;
+        left: 27.9%;  
+      }
+      #car-6 
+      {
+        position: absolute;
+        left: 36.9%;  
+      }
+      #car-7 
+      {
+        position: absolute;
+        left: 45.9%;  
+      }
+      #car-8 
+      {
+        position: absolute;
+        left: 54.9%;  
+      }
+      #car-9 
+      {
+        position: absolute;
+        left: 63.9%;  
+      }
+      
+      #car-10 
+      {
+        position: absolute;
+        left: 72.9%;  
+      }
+      
+      #car-11 
+      {
+        position: absolute;
+        left: 81.9%;  
+      }
+      
+      #car-12
+      {
+        position: absolute;
+        left: 90.9%;  
+      }
+      #car-13
+      {
+        position: absolute;
+        top: 36%;
+        left: 90.9%;  
+      }
+      #car-14
+      {
+        position: absolute;
+        top: 36%;
+        left: 81.9%;  
+      }
+      #car-15
+      {
+        position: absolute;
+        top: 36%;
+        left: 72.9%;  
+      }
+      #car-16
+      {
+        position: absolute;
+        top: 36%;
+        left: 63.9%;  
+      }
+      #car-17
+      {
+        position: absolute;
+        top: 36%;
+        left: 54.9%;  
+      }
+      #car-18
+      {
+        position: absolute;
+        top: 36%;
+        left: 45.9%;  
+      }
+
+      #car-19
+      {
+        position: absolute;
+        bottom: 0.9%;
+        left: 0.9%;  
+      }
+      #car-20
+      {
+        position: absolute;
+        bottom: 0.9%;
+        left: 12.6%;  
+      }
+
+      #car-21
+      {
+        position: absolute;
+        bottom: 0.9%;
+        left: 25.2%;  
+      }
+      #car-22
+      {
+        position: absolute;
+        bottom: 0.9%;
+        left: 36.9%;  
+      }
+      #car-23
+      {
+        position: absolute;
+        bottom: 0.9%;
+        left: 48.6%;  
+      }
+      
+      #car-24
+      {
+        position: absolute;
+        bottom: 0.9%;
+        left:59.4%;  
+      }
+      
+      #car-25
+      {
+        position: absolute;
+        bottom: 0.9%;
+        left:70.2%;  
+      }
+      
+      #car-26
+      {
+        position: absolute;
+        bottom: 0.9%;
+        left:81.9%;  
+      }
+      
+      #car-27
+      {
+        position: absolute;
+        bottom: 14.4%;
+        left:0.9%;  
+      }
+
+      #car-28
+      {
+        position: absolute;
+        bottom: 27.9%;
+        left:90.9%; 
+         
+      }
+
+#light-one
+{
+  position: absolute;
+  top: 27%;
+  left: 40.14%;
+}
+
+#light-two
+{
+  position: absolute;
+  top: 27%;
+  left: 0.18%;
+}
+.car-lights
+{
+  color: white;
+  height: 10px;
+  width: 30px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.car-lights span
+{
+box-shadow: 12px 12px 100px 30px gold;
+}
+#car-light-one
+{
+  position: absolute;
+  top: 9%;
+  left: 3.6%;
+}
+
+
+
+
+      
+      
+      
+    </style>
+  </head>
+  <body>
+    <div class="search-container">
+      <input type="text" class="search-bar" placeholder="Enter Car Number..." />
+      <button class="search-icon">🔍</button>
+    </div>
+
+    <div class="container">
+      <!-- <div class="content" id="car-1">
+        <img src="/images/car-1.png" alt="" />
+      </div> -->
+
+      <div class="car-lights" id="car-light-one">
+        <span></span>
+        <span></span>
+      </div>
+      
+      <div class="content" id="light-one">
+        <img src="/images/street-lamp.png" alt="">
+      </div>
+       
+      <div class="content" id="light-two">
+        <img src="/images/street-lamp.png" alt="">
+      </div>
+      <div class="content" id="car-2">
+        <img src="/images/car-2.png" alt="" />
+      </div>
+      
+      <div class="content" id="car-3">
+        <img src="/images/car-3.png" alt="" />
+      </div>
+      
+      <div class="content" id="car-4">
+        <img src="/images/car-6.png" alt="" />
+      </div>
+
+      <div class="content" id="car-5">
+        <img src="/images/car-2.png" alt="" />
+      </div>
+      <div class="content" id="car-6">
+        <img src="/images/car-6.png" alt="" />
+      </div>
+      
+      <div class="content" id="car-7">
+        <img src="/images/car-6.png" alt="" />
+      </div>
+      
+      <div class="content" id="car-8">
+        <img src="/images/car-6.png" alt="" />
+      </div>
+      
+      <div class="content" id="car-9">
+        <img src="/images/car-6.png" alt="" />
+      </div>
+      <div class="content" id="car-10">
+        <img src="/images/car-3.png" alt="" />
+      </div>
+      <div class="content" id="car-11">
+        <img src="/images/car-2.png" alt="" />
+      </div>
+      <div class="content" id="car-12">
+        <img src="/images/car-2.png" alt="" />
+      </div>
+<!--  -->
+      <div class="content" id="car-13">
+        <img src="/images/car-5.png" alt="" />
+      </div>
+
+      <div class="content" id="car-14">
+        <img src="/images/car-7.png" alt="" />
+      </div>
+
+      <div class="content" id="car-15">
+        <img src="/images/car-9.png" alt="" />
+      </div>
+
+      <div class="content" id="car-16">
+        <img src="/images/car-9.png" alt="" />
+      </div>
+      <div class="content" id="car-17">
+        <img src="/images/car-9.png" alt="" />
+      </div>
+      <div class="content" id="car-18">
+        <img src="/images/car-7.png" alt="" />
+      </div>
+
+      <!--  -->
+
+      <div class="content" id="car-19">
+        <img src="/images/car-12.png" alt="" />
+      </div>
+      
+      <div class="content" id="car-20">
+        <img src="/images/car-13.png" alt="" />
+      </div>
+      <div class="content" id="car-21">
+        <img src="/images/car-14.png" alt="" />
+      </div>
+      <div class="content" id="car-22">
+        <img src="/images/car-15.png" alt="" />
+      </div>
+      <div class="content" id="car-23">
+        <img src="/images/car-16.png" alt="" />
+      </div>
+      <div class="content" id="car-24">
+        <img src="/images/car-17.png" alt="" />
+      </div>
+      <div class="content" id="car-25">
+        <img src="/images/car-18.png" alt="" />
+      </div>
+      <div class="content" id="car-26">
+        <img src="/images/car-19.png" alt="" />
+      </div>
+      <div class="content" id="car-27">
+        <img src="/images/car-20.png" alt="" />
+      </div>
+      <div class="content" id="car-28">
+        <img src="/images/van.png" alt="" />
+      </div>
+
+    </div>
+    <script>
+      const switchButton = document.getElementById('switch');
+  const bulb = document.getElementById('bulb');
+  
+  switchButton.addEventListener('click', () => {
+    if (bulb.classList.contains('on')) {
+      bulb.classList.remove('on');
+      switchButton.textContent = 'Turn On';
+    } else {
+      bulb.classList.add('on');
+      switchButton.textContent = 'Turn Off';
+    }
+  });
+  
+    </script>
+  </body>
+</html>

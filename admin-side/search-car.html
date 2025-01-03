@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Search Car</title>
+    <style>
+      /* General reset for margin and padding */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Make the search bar responsive */
+      .search-container {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .search-bar {
+        width: 30%;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      .container {
+        position: relative;
+        height: 72vh;
+        width: 72vw;
+        margin: 21px auto;
+        border-radius: 12px;
+        background-color: whitesmoke;
+
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+          rgba(0, 0, 0, 0.23) 0px 6px 6px;
+      }
+
+      .content {
+        height: 90px;
+        width: 90px;
+        backdrop-filter: blur(1px);
+        text-align: center;
+        border: 2px solid transparent;
+      }
+      .search-icon {
+        background-color: #ccc;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+
+      .search-icon:hover {
+        background-color: #aaa;
+      }
+
+      /* Responsive behavior */
+      @media screen and (max-width: 768px) {
+        .container {
+          width: 80vw;
+          height: 40vh;
+        }
+
+        .search-bar {
+          width: 90%;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .container {
+          width: 90vw;
+          height: 30vh;
+        }
+
+        .search-bar {
+          width: 95%;
+        }
+      }
+
+      .content img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+      .content img:hover {
+        transition: all 630ms;
+        transform: scale(1.12);
+        filter: drop-shadow(0px 16px 2px rgba(21, 21, 21, 0.158));
+      }
+      .content:hover {
+        transition: all 630ms;
+      }
+      #car-1 {
+        position: absolute;
+        bottom: 0.9%;
+        left: 0.9%;
+      }
+      #car-2 {
+        position: absolute;
+        left: 1.8%;
+      }
+      #car-3 {
+        position: absolute;
+        left: 10.8%;
+      }
+      #car-4 {
+        position: absolute;
+        left: 18.9%;
+      }
+      #car-5 {
+        position: absolute;
+        left: 27.9%;
+      }
+      #car-6 {
+        position: absolute;
+        left: 36.9%;
+      }
+      #car-7 {
+        position: absolute;
+        left: 45.9%;
+      }
+      #car-8 {
+        position: absolute;
+        left: 54.9%;
+      }
+      #car-9 {
+        position: absolute;
+        left: 63.9%;
+      }
+
+      #car-10 {
+        position: absolute;
+        left: 72.9%;
+      }
+
+      #car-11 {
+        position: absolute;
+        left: 81.9%;
+      }
+
+      #car-12 {
+        position: absolute;
+        left: 90.9%;
+      }
+      #car-13 {
+        position: absolute;
+        top: 36%;
+        left: 90.9%;
+      }
+      #car-14 {
+        position: absolute;
+        top: 36%;
+        left: 81.9%;
+      }
+      #car-15 {
+        position: absolute;
+        top: 36%;
+        left: 72.9%;
+      }
+      #car-16 {
+        position: absolute;
+        top: 36%;
+        left: 63.9%;
+      }
+      #car-17 {
+        position: absolute;
+        top: 36%;
+        left: 54.9%;
+      }
+      #car-18 {
+        position: absolute;
+        top: 36%;
+        left: 45.9%;
+      }
+
+      #car-19 {
+        position: absolute;
+        bottom: 0.9%;
+        left: 0.9%;
+      }
+      #car-20 {
+        position: absolute;
+        bottom: 0.9%;
+        left: 12.6%;
+      }
+
+      #car-21 {
+        position: absolute;
+        bottom: 0.9%;
+        left: 25.2%;
+      }
+      #car-22 {
+        position: absolute;
+        bottom: 0.9%;
+        left: 36.9%;
+      }
+      #car-23 {
+        position: absolute;
+        bottom: 0.9%;
+        left: 48.6%;
+      }
+
+      #car-24 {
+        position: absolute;
+        bottom: 0.9%;
+        left: 59.4%;
+      }
+
+      #car-25 {
+        position: absolute;
+        bottom: 0.9%;
+        left: 70.2%;
+      }
+
+      #car-26 {
+        position: absolute;
+        bottom: 0.9%;
+        left: 81.9%;
+      }
+
+      #car-27 {
+        position: absolute;
+        bottom: 14.4%;
+        left: 0.9%;
+      }
+
+      #car-28 {
+        position: absolute;
+        bottom: 27.9%;
+        left: 90.9%;
+      }
+
+      #light-one {
+        position: absolute;
+        top: 27%;
+        left: 40.14%;
+      }
+
+      #light-two {
+        position: absolute;
+        top: 27%;
+        left: 0.18%;
+      }
+      .car-lights {
+        color: white;
+        height: 10px;
+        width: 30px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .car-lights span {
+        box-shadow: 12px 12px 100px 30px gold;
+      }
+      #car-light-one {
+        position: absolute;
+        top: 9%;
+        left: 3.6%;
+      }
+
+      .bulb {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background-color: transparent;
+        margin-bottom: 20px;
+        position: relative;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      /* Glowing effect when light is on */
+      .bulb.on {
+        background-color: rgba(255, 255, 0, 0.67); /* Light color */
+        box-shadow: 0 0 36px 18px rgba(255, 255, 0, 0.8); /* Glowing shadow effect */
+      }
+      .container.on {
+        background-color: #282828;
+      }
+
+      .switch-container {
+        position: absolute;
+        top: 1.6%;
+        left: 72%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .switch-container .switch-icon {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+        background-color: whitesmoke;
+        color: #282828;
+        transition: background-color 0.3s ease;
+      }
+      .switch {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+        background-color: #007bff;
+        color: white;
+        transition: background-color 0.3s ease;
+      }
+
+      .switch:hover {
+        background-color: #0056b3;
+      }
+      .switch-icon:hover {
+        color: white;
+        background-color: #0056b3;
+      }
+      #bulb-light-one {
+        position: absolute;
+        top: 30%;
+        left: 3.8%;
+        z-index: 1;
+      }
+      #bulb-light-two {
+        position: absolute;
+        top: 30%;
+        left: 43.8%;
+        z-index: 1;
+      }
+
+      .bounce {
+        -webkit-animation-name: bounce;
+        animation-name: bounce;
+        -webkit-transform-origin: center bottom;
+        -ms-transform-origin: center bottom;
+        transform-origin: center bottom;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+      }
+      @keyframes bounce {
+        0%,
+        20%,
+        53%,
+        80%,
+        100% {
+          -webkit-transition-timing-function: cubic-bezier(
+            0.215,
+            0.61,
+            0.355,
+            1
+          );
+          transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+        40%,
+        43% {
+          -webkit-transition-timing-function: cubic-bezier(
+            0.755,
+            0.05,
+            0.855,
+            0.06
+          );
+          transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          -webkit-transform: translate3d(0, -30px, 0);
+          transform: translate3d(0, -30px, 0);
+        }
+        70% {
+          -webkit-transition-timing-function: cubic-bezier(
+            0.755,
+            0.05,
+            0.855,
+            0.06
+          );
+          transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          -webkit-transform: translate3d(0, -15px, 0);
+          transform: translate3d(0, -15px, 0);
+        }
+        90% {
+          -webkit-transform: translate3d(0, -4px, 0);
+          transform: translate3d(0, -4px, 0);
+        }
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        53%,
+        80%,
+        100% {
+          -webkit-transition-timing-function: cubic-bezier(
+            0.215,
+            0.61,
+            0.355,
+            1
+          );
+          transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+        40%,
+        43% {
+          -webkit-transition-timing-function: cubic-bezier(
+            0.755,
+            0.05,
+            0.855,
+            0.06
+          );
+          transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          -webkit-transform: translate3d(0, -30px, 0);
+          transform: translate3d(0, -30px, 0);
+        }
+        70% {
+          -webkit-transition-timing-function: cubic-bezier(
+            0.755,
+            0.05,
+            0.855,
+            0.06
+          );
+          transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          -webkit-transform: translate3d(0, -15px, 0);
+          transform: translate3d(0, -15px, 0);
+        }
+        90% {
+          -webkit-transform: translate3d(0, -4px, 0);
+          transform: translate3d(0, -4px, 0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="search-container">
+    
+      <input
+        type="text"
+        class="search-bar"
+        placeholder="Enter Car Number..."
+        id="search-box"
+      />
+      <button class="search-icon" onclick="searchCar()">🔍</button>
+    </div>
+
+
+    <div class="container" id="parking-plot">
+      <div class="bulb" id="bulb-light-one"></div>
+      <div class="bulb" id="bulb-light-two"></div>
+
+      <div class="content" id="light-one">
+        <img src="/images/street-lamp.png" alt="" />
+      </div>
+
+      <div class="content" id="light-two">
+        <img src="/images/street-lamp.png" alt="" />
+      </div>
+      <div class="content" id="car-2">
+        <img src="/images/car-2.png" alt="" />
+      </div>
+
+      <div class="content" id="car-3">
+        <img src="/images/car-3.png" alt="" />
+      </div>
+
+      <div class="content" id="car-4">
+        <img src="/images/car-6.png" alt="" />
+      </div>
+
+      <div class="content" id="car-5">
+        <img src="/images/car-2.png" alt="" />
+      </div>
+      <div class="content" id="car-6">
+        <img src="/images/car-6.png" alt="" />
+      </div>
+
+      <div class="content" id="car-7">
+        <img src="/images/car-6.png" alt="" />
+      </div>
+
+      <div class="content" id="car-8">
+        <img src="/images/car-6.png" alt="" />
+      </div>
+
+      <div class="content" id="car-9">
+        <img src="/images/car-6.png" alt="" />
+      </div>
+      <div class="content" id="car-10">
+        <img src="/images/car-3.png" alt="" />
+      </div>
+      <div class="content" id="car-11">
+        <img src="/images/car-2.png" alt="" />
+      </div>
+      <div class="content" id="car-12">
+        <img src="/images/car-2.png" alt="" />
+      </div>
+      <!--  -->
+      <div class="content" id="car-13">
+        <img src="/images/car-5.png" alt="" />
+      </div>
+
+      <div class="content" id="car-14">
+        <img src="/images/car-7.png" alt="" />
+      </div>
+
+      <div class="content" id="car-15">
+        <img src="/images/car-9.png" alt="" />
+      </div>
+
+      <div class="content" id="car-16">
+        <img src="/images/car-9.png" alt="" />
+      </div>
+      <div class="content" id="car-17">
+        <img src="/images/car-9.png" alt="" />
+      </div>
+      <div class="content" id="car-18">
+        <img src="/images/car-7.png" alt="" />
+      </div>
+
+      <!--  -->
+
+      <div class="content" id="car-19">
+        <img src="/images/car-12.png" alt="" />
+      </div>
+
+      <div class="content" id="car-20">
+        <img src="/images/car-13.png" alt="" />
+      </div>
+      <div class="content" id="car-21">
+        <img src="/images/car-14.png" alt="" />
+      </div>
+      <div class="content" id="car-22">
+        <img src="/images/car-15.png" alt="" />
+      </div>
+      <div class="content" id="car-23">
+        <img src="/images/car-16.png" alt="" />
+      </div>
+      <div class="content" id="car-24">
+        <img src="/images/car-17.png" alt="" />
+      </div>
+      <div class="content" id="car-25">
+        <img src="/images/car-18.png" alt="" />
+      </div>
+      <div class="content" id="car-26">
+        <img src="/images/car-19.png" alt="" />
+      </div>
+      <div class="content" id="car-27">
+        <img src="/images/car-20.png" alt="" />
+      </div>
+      <div class="content" id="car-28">
+        <img src="/images/van.png" alt="" />
+      </div>
+    </div>
+
+    <div class="switch-container">
+      <div class="switch-icon"><label for="switch"><i class="fa-solid fa-moon"></i></label></div>
+      <button class="switch" id="switch">Turn On</button>
+    </div>
+    <script>
+      const switchButton = document.getElementById("switch");
+      const parking = document.getElementById("parking-plot");
+      const bulb = document.getElementById("bulb-light-one");
+      const bulb2 = document.getElementById("bulb-light-two");
+
+      switchButton.addEventListener("click", () => {
+        if (parking.classList.contains("on")) {
+          parking.classList.remove("on");
+
+          switchButton.textContent = "Turn On";
+        } else {
+          parking.classList.add("on");
+
+          switchButton.textContent = "Turn Off";
+        }
+
+        if (bulb.classList.contains("on")) {
+          bulb.classList.remove("on");
+
+          switchButton.textContent = "Turn On";
+        } else {
+          bulb.classList.add("on");
+
+          switchButton.textContent = "Turn Off";
+        }
+
+        if (bulb2.classList.contains("on")) {
+          bulb2.classList.remove("on");
+
+          switchButton.textContent = "Turn On";
+        } else {
+          bulb2.classList.add("on");
+
+          switchButton.textContent = "Turn Off";
+        }
+      });
+
+      function searchCar() {
+        searchBox = document.getElementById("search-box");
+        car3 = document.getElementById("car-3");
+        car6 = document.getElementById("car-6");
+        car9 = document.getElementById("car-9");
+        car12 = document.getElementById("car-12");
+        car18 = document.getElementById("car-18");
+        car21 = document.getElementById("car-21");
+        car27 = document.getElementById("car-27");
+
+        if (searchBox.value == "GJ03EC0101") {
+          car12.classList.add("bounce");
+        } else if (searchBox.value == "GJ03CE1484") {
+          car6.classList.add("bounce");
+        } else if (searchBox.value == "GJ03JC9294") {
+          car3.classList.add("bounce");
+        } else if (searchBox.value == "GJ03AD0303") {
+          car9.classList.add("bounce");
+        } else if (searchBox.value == "GJ03KA5700") {
+          car18.classList.add("bounce");
+        } else if (searchBox.value == "GJ03JR2798") {
+          car21.classList.add("bounce");
+        } else if (searchBox.value == "GJ03JJ3699") {
+          car27.classList.add("bounce");
+        } else {
+          alert("Car Not Found");
+        }
+      }
+    </script>
+  </body>
+</html>

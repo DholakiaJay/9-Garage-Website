@@ -2,11 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+ 
 }
 
-body {
-  font-family: Arial, sans-serif;
-}
+
 /* Header */
 header {
   display: flex;
@@ -57,7 +58,56 @@ nav ul li a:hover {
   height: 4px;
   width: 100%;
 }
+.home-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.8rem;
+}
+.home-box button {
+  background-color: transparent;
+  padding: 0.3rem 0.6rem;
+  border-radius: 12px;
+  outline: none;
+  border: 1px solid silver;
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.view-balance-home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  margin-top: 6%;
+}
+.viewbal
+{
+  color:grey;
+}
+.notviewbal {
+  color: grey;
+  display: none;
+}
+.bal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  color: transparent;
+  
 
+}
+.content-box h2
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:0.6rem;
+  padding: 9px;
+  
+}
 /* Responsive design */
 @media (max-width: 768px) {
   nav ul {
@@ -95,14 +145,23 @@ main {
 main header {
   text-align: center;
   margin-bottom: 2rem;
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  border-radius: 15px;
+  backdrop-filter: blur(10px); /* Blurs the background */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Optional border with some transparency */
+  background-color: #282828;
+  color: white;
+  
 }
 
 main header h1 {
   font-size: 2.5rem;
-  color: #e0e0e0;
+  color:white;
 }
 main header h3 {
-  color: #e0e0e0;
+  color:white;
+  font-weight: 600;
 }
 
 main header p {
@@ -113,19 +172,33 @@ main header p {
 .content {
   display: flex;
   gap: 2rem;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .content-box,
 .appoint-content-box {
-  background-color: #e0e0e0;
+  background-color: whitesmoke;
   padding: 1.5rem;
   border-radius: 8px;
   width: 30%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   overflow: auto;
+}
+.content-box:hover
+{
+  transition: all 300ms;
+  transform: scale(1.01);
+  box-shadow: rgba(0, 0, 0, 0.301) 0px 25px 20px -20px;
+  
+  
+  
+}
+.content-box:hover h2
+{
+  transition: all 300ms;
+  color:black;
 }
 
 .appoint-content-box {
@@ -174,13 +247,23 @@ main header p {
   justify-content: space-between;
   max-width: 800px;
   width: 40%;
-  background-color: transparent;
-  border-radius: 5px;
-  padding: 5px 10px;
+  padding: 12px;
+  border-radius: 12px;
+  
 }
 .search-container input {
-  background-color: transparent;
+  color: white;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+            border-radius: 15px;
+            backdrop-filter: blur(10px); /* Blurs the background */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Optional border with some transparency */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
 }
+.search-container input::placeholder
+{
+  color: white;
+}
+
 
 .search-bar {
   width: 80%;
@@ -233,7 +316,7 @@ main header p {
 
   max-width: 300px;
   width: 180px;
-  color: #e0e0e0;
+  color: white;
   padding: 10px;
 }
 .functions span i {
@@ -329,18 +412,20 @@ main header p {
 }
 
 .action-btn {
-  padding: 0.5rem 1rem;
-  background-color: #333;
-  color: white;
+  padding: 0.3rem 0.6rem;
+  background-color:transparent;
+  color:#333;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.3s;
 }
 
 .action-btn:hover {
+  transition: all 300ms;
   background-color: #444;
+  color: white;
 }
 
 /* Responsive Design */
@@ -490,6 +575,7 @@ main header p {
 }
 
 .team-member p {
+  margin-bottom: 9px;
   font-size: 16px;
   color: #666;
 }
@@ -1067,7 +1153,6 @@ h2 {
 }
 .service-dec {
   display: none;
-  
 }
 
 /* Service Form */
@@ -1087,7 +1172,6 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 .service-Form-container .form form {
@@ -1129,4 +1213,811 @@ h2 {
 .service-Form-container .form form button:hover {
   background-color: black;
   color: white;
+}
+/* Payment */
+
+.payment-card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: start;
+  border: 1px solid silver;
+  color: white;
+  border-radius: 6px;
+  padding: 12px;
+  /* background:#282828; */
+  background: linear-gradient(90deg, #282828ec 100%, #282828 100%);
+}
+.online-payment-row {
+  backdrop-filter: blur(50px);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.balance {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.balance-amount {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.dont-view-balance {
+  display: none;
+}
+.payment-closebtn {
+  align-self: end;
+  font-size: larger;
+}
+
+.payment-card span {
+  color: silver;
+}
+.payment-card b {
+  color: whitesmoke;
+}
+.payment-card i {
+  color: whitesmoke;
+}
+.payment-card i:hover {
+  transition: all 300ms;
+  color: orange;
+}
+/* New */
+.banking-row {
+  backdrop-filter: blur(50px);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.bank-payment-Card {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.3rem;
+  border-radius: 0.6rem;
+  padding: 0.6rem;
+  color: white;
+  box-shadow: rgba(1, 70, 87, 0.336) 0px 3px 3px 0px;
+  background: linear-gradient(90deg, #282828ec 100%, #282828 100%);
+}
+
+.bank-balance {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.dont-view-bank-balance {
+  transition: all 300ms;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.view-bank-balance {
+  transition: all 300ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bank-balance-amount {
+  transition: all 300ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  color: transparent;
+}
+.bank-card-close-btn {
+  transition: all 100ms;
+  align-self: end;
+}
+.bank-card-close-btn:hover {
+  color: gold;
+}
+.bank-card-heading {
+  color: #282828;
+}
+
+/* new booking / appointment*/
+.appointment-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px;
+}
+.appointment-card:hover {
+  transition: all 300ms;
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.appointment-card .header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.appointment-card .header h2 {
+  font-size: 21px;
+  color: #33333374;
+}
+.appointment-card .header h2 span {
+  color: #333;
+}
+
+.booking-card-content {
+  margin-bottom: 20px;
+}
+
+.booking-card-row {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.booking-card-row label {
+  font-weight: bold;
+  color: #555;
+}
+
+.booking-card-row p {
+  display: inline-block;
+  color: #333;
+  font-size: 16px;
+}
+
+.appointment-card .footer {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+}
+
+.appointment-card .footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.appointment-card .footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .appointment-card {
+    padding: 15px;
+  }
+
+  .appointment-card .header h2 {
+    font-size: 20px;
+  }
+
+  .booking-card-row label {
+    font-size: 14px;
+  }
+
+  .booking-card-row p {
+    font-size: 14px;
+  }
+
+  .appointment-card .footer {
+    font-size: 12px;
+  }
+}
+
+.button-container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 9px 21px;
+  font-size: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.accept {
+  background-color: #4caf50;
+  color: white;
+}
+
+.accept:hover {
+  background-color: #45a049;
+}
+
+.cancel {
+  background-color: #f44336;
+  color: white;
+}
+
+.cancel:hover {
+  background-color: #e53935;
+}
+/* Booking Appointment / Form */
+
+.appointment-card-form {
+  display: none;
+  position: absolute;
+  top: 36%;
+  left: 36%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px;
+}
+
+.header-form {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header-form h4 {
+  font-size: 24px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.booking-card-content-form {
+  margin-bottom: 20px;
+}
+
+.booking-card-row-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.booking-card-row-form input,
+.footer-form input {
+  width: 50%;
+  outline: none;
+  border: 1px solid silver;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+}
+
+.booking-card-row-form label {
+  font-weight: bold;
+  color: #555;
+}
+
+.booking-card-row-form p {
+  display: inline-block;
+  color: #333;
+  font-size: 16px;
+}
+
+.footer-form {
+  text-align: center;
+
+  color: #777;
+  width: 100%;
+}
+
+.footer-form label {
+  font-weight: bold;
+  color: #555;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .appointment-card-form {
+    padding: 15px;
+  }
+
+  .header-form h2 {
+    font-size: 20px;
+  }
+
+  .booking-card-row-form label {
+    font-size: 14px;
+  }
+
+  .booking-card-row-form p {
+    font-size: 14px;
+  }
+
+  .footer-form {
+    font-size: 12px;
+  }
+}
+
+.button-container-form {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.closebtnForm {
+  margin-left: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.closebtnForm .closebtn {
+  border-radius: 3px;
+}
+.closebtnForm .closebtn:hover {
+  transition: all 300ms;
+  background-color: #282828;
+  color: white;
+}
+
+/* AppForm */
+.all-app-form-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-form-container {
+  margin: 50px auto;
+  display: none;
+  background-color: #fff;
+  padding: 18px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 450px;
+}
+
+.app-form-container h2 {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.app-form-container label {
+  display: block;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+/* input[type="text"], input[type="email"], input[type="password"] */
+.app-form-container input,
+.app-form-container select {
+  width: 100%;
+  padding: 9px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.app-form-container button {
+  width: 100%;
+  padding: 9px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.app-form-container button:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 600px) {
+  .app-form-container {
+    padding: 12px;
+    width: 90%;
+  }
+
+  .app-form-container h2 {
+    font-size: 18px;
+  }
+
+  .app-form-container input {
+    font-size: 12px;
+  }
+
+  .app-form-container button {
+    font-size: 12px;
+  }
+}
+/* Service Form */
+.all-service-form-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-form-container {
+  margin: 50px auto;
+  display: none;
+  background-color: #fff;
+  padding: 18px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 450px;
+}
+
+.service-form-container h2 {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.service-form-container label {
+  display: block;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+/* input[type="text"], input[type="email"], input[type="password"] */
+.service-form-container input,
+.service-form-container select,
+.service-form-container textarea {
+  width: 100%;
+  padding: 9px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.service-form-container button {
+  width: 100%;
+  padding: 9px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.service-form-container button:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 600px) {
+  .service-form-container {
+    padding: 12px;
+    width: 90%;
+  }
+
+  .service-form-container h2 {
+    font-size: 18px;
+  }
+
+  .service-form-container input {
+    font-size: 12px;
+  }
+
+  .service-form-container button {
+    font-size: 12px;
+  }
+}
+/* Customer */
+.all-customer-form-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customer-form-container {
+  display: none;
+  background-color: #fff;
+  padding: 18px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 450px;
+}
+
+.customer-form-container h2 {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.customer-form-container label {
+  display: block;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+/* input[type="text"], input[type="email"], input[type="password"] */
+.customer-form-container input,
+.customer-form-container select,
+.customer-form-container textarea {
+  width: 100%;
+  padding: 9px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.customer-form-container button {
+  width: 100%;
+  padding: 9px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.customer-form-container button:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 600px) {
+  .customer-form-container {
+    padding: 12px;
+    width: 90%;
+  }
+
+  .customer-form-container h2 {
+    font-size: 18px;
+  }
+
+  .customer-form-container input {
+    font-size: 12px;
+  }
+
+  .customer-form-container button {
+    font-size: 12px;
+  }
+}
+
+/* Work Page */
+.work-card {
+  background-color: #282828;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  transition: transform 0.6s ease;
+  padding: 0.3rem;
+}
+
+.work-card:hover {
+  /* box-shadow: rgba(9, 9, 30, 0.25) 0px 30px 60px -12px inset, rgba(234, 234, 10, 0.9) 0px 18px 36px -18px inset; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+}
+
+.work-card:hover .work-card-img {
+  filter: contrast(100%);
+}
+
+.work-card-img {
+  transition: all 300ms;
+  padding: 12px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  filter: invert(50%);
+}
+
+.work-card-content {
+  padding: 20px;
+}
+
+.work-card-content h3 {
+  font-size: 1.5rem;
+  color: whitesmoke;
+  margin-bottom: 10px;
+}
+
+.work-card-content h6 {
+  font-size: 0.8rem;
+  color: lightgray;
+  margin-bottom: 10px;
+}
+
+.work-card-content p {
+  font-size: 1rem;
+  color: silver;
+  margin-bottom: 15px;
+}
+
+.work-status-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.work-status {
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 25px;
+  text-transform: capitalize;
+  font-size: 0.9rem;
+}
+
+.work-pending {
+  background-color: #ffcc00;
+  color: #fff;
+}
+
+.work-in-progress {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.work-done {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.workCloseBtn {
+  color: #f5f5f5;
+  display: none;
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin-left: 80%;
+}
+
+.workCloseBtn:hover {
+  transition: all 300ms;
+  color: red;
+  font-size: 1.5rem;
+  margin-left: 90%;
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .work-card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .work-card {
+    width: 100%;
+  }
+
+  .work-card-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .work-card-content p {
+    font-size: 0.9rem;
+  }
+
+  .work-status {
+    font-size: 0.8rem;
+  }
+}
+/* Work Form */
+
+.all-work-form-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-form-container {
+  display: none;
+  background-color: #fff;
+  padding: 18px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 450px;
+}
+
+.work-form-container h2 {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.work-form-container label {
+  display: block;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+/* input[type="text"], input[type="email"], input[type="password"] */
+.work-form-container input,
+.work-form-container select,
+.work-form-container textarea {
+  width: 100%;
+  padding: 9px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.work-form-container button {
+  width: 100%;
+  padding: 9px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.work-form-container button:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 600px) {
+  .work-form-container {
+    padding: 12px;
+    width: 90%;
+  }
+
+  .work-form-container h2 {
+    font-size: 18px;
+  }
+
+  .work-form-container input {
+    font-size: 12px;
+  }
+
+  .work-form-container button {
+    font-size: 12px;
+  }
+}
+#datetime
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:white;
+}
+#findcar
+{
+  background-image: url('/images/searching-car.png');
+  background-position: center;
+  background-size:contain;
+  background-repeat: no-repeat;
+  height: 50%;
+  width: 50%;
+  margin: 0px auto;
+  border: 1px solid grey;
+  border-radius: 12px;
+
+
+
+
 }

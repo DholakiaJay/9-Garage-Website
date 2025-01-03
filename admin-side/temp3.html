@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D M G</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="service-view"></div>
+    <div class="all-service-form-container">
+      <div class="service-form-container" id="service-form">
+        
+        
+        <form id="my-service-form">
+          <span onclick="closeServiceForm()" style="margin-left: 90%;"><i class="fa-solid fa-xmark"></i></span>
+          <h2>Service</h2>
+          
+          
+          <label for="serviceLogo">Logo Link / Path</label>
+          <input type="text" placeholder="Image Link / Path" name="serviceImg"/>
+
+          <label for="serviceName">Name</label>
+          <input type="text" placeholder="Service Name" name="serviceName"/>
+
+          <label for="serviceDec">Description</label>
+          <textarea
+            name="serviceDec"
+            id=""
+            placeholder="Service Description"
+            
+          ></textarea>
+
+          <label for="serviceCharge">Charges</label>
+          <input type="text" placeholder="Service Charge in Rs. . ." name="serviceCharge" />
+
+          <button id="addservcieButton">Add</button>
+          
+        </form>
+      </div>
+    </div>
+    <!-- Header - Section -->
+    <header id="serviceHeader">
+      <div class="logo">
+        <a href="#">D M G</a>
+      </div>
+      <nav id="serviceNav">
+        <ul class="nav-links">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/admin-side/work.html">Work</a></li>
+          <li><a href="/admin-side/appointment.html">Appointments</a></li>
+          <li><a href="/admin-side/customers.html">Customers</a></li>
+          <li><a href="/admin-side/payment.html">Payment</a></li>
+          <li><a href="/admin-side/service.html">Services</a></li>
+          <li><a href="/admin-side/about.html">About</a></li>
+          <li><a href="/admin-side/feedback.html">Feedback</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+    <!-- Main - Section -->
+    <main class="main-section" id="serviceMainSection">
+      <header>
+        <div class="wraaper-work">
+          <h3>Services</h3>
+
+          <span class="functions">
+            <span id="refreshwork"
+              ><i class="fa-solid fa-rotate-right"></i
+            ></span>
+            <span id="addwork" onclick="openServiceForm()"
+              ><i class="fa-solid fa-plus"></i
+            ></span>
+
+            <span id="sharework"><i class="fa-solid fa-share-nodes"></i></span>
+          </span>
+        </div>
+
+        <div class="search-container">
+          <input type="text" placeholder="Search..." class="search-bar" />
+          <button class="search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </header>
+
+      <section class="service-container" id="serviceContainer">
+        <div class="services">
+          <div class="service-card">
+            <img
+              src="/images/modification.png"
+              alt="User 1"
+              class="service-avatar"
+            />
+            <h3>Modification</h3>
+            <div class="service-dec">
+              Something More intresting about Car Modification . . . .
+              <p><b>₹ 3000/-</b></p>
+            </div>
+
+            <div class="service-actions">
+              <button class="action-btn" onclick="serviceViewPage(event)">
+                Edit
+              </button>
+              <button class="action-btn" onclick="serviceDelete(event)">
+                Delete
+              </button>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <img src="/images/update.png" alt="User 1" class="service-avatar" />
+            <h3>Upgradation</h3>
+            <div class="service-dec">
+              Something More intresting about Car Upgradation . . . .
+              <p><b>₹ 6000/-</b></p>
+            </div>
+
+            <div class="service-actions">
+              <button class="action-btn" onclick="serviceViewPage(event)">
+                Edit
+              </button>
+              <button class="action-btn" onclick="serviceDelete(event)">
+                Delete
+              </button>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <img
+              src="/images/washing.png"
+              alt="User 1"
+              class="service-avatar"
+            />
+            <h3>Washing</h3>
+            <div class="service-dec">
+              Something More intresting about Car Washing . . . .
+              <p><b>₹ 600/-</b></p>
+            </div>
+
+            <div class="service-actions">
+              <button class="action-btn" onclick="serviceViewPage(event)">
+                Edit
+              </button>
+              <button class="action-btn" onclick="serviceDelete(event)">
+                Delete
+              </button>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <img
+              src="/images/car-maintenance.png"
+              alt="User 1"
+              class="service-avatar"
+            />
+            <h3>Full Service</h3>
+            <div class="service-dec">
+              Something More intresting about Car Full Service . . . .
+              <p><b>₹ 900/-</b></p>
+            </div>
+
+            <div class="service-actions">
+              <button class="action-btn" onclick="serviceViewPage(event)">
+                Edit
+              </button>
+              <button class="action-btn" onclick="serviceDelete(event)">
+                Delete
+              </button>
+            </div>
+          </div>
+          <div class="service-card">
+            <img
+              src="/images/general.png"
+              alt="User 1"
+              class="service-avatar"
+            />
+            <h3>General Repairing</h3>
+            <div class="service-dec">
+              Something More intresting about Car General Repairing . . . .
+              <p><b>₹ 1200/-</b></p>
+            </div>
+
+            <div class="service-actions">
+              <button class="action-btn" onclick="serviceViewPage(event)">
+                Edit
+              </button>
+              <button class="action-btn" onclick="serviceDelete(event)">
+                Delete
+              </button>
+            </div>
+          </div>
+          <div class="service-card">
+            <img
+              src="/images/electric.png"
+              alt="User 1"
+              class="service-avatar"
+            />
+            <h3>Electrical Repairing</h3>
+            <div class="service-dec">
+              Something More intresting about Car Electrical Repairing . . . .
+              <p><b>₹ 300/-</b></p>
+            </div>
+
+            <div class="service-actions">
+              <button class="action-btn" onclick="serviceViewPage(event)">
+                Edit
+              </button>
+              <button class="action-btn" onclick="serviceDelete(event)">
+                Delete
+              </button>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <img src="/images/engine.png" alt="User 1" class="service-avatar" />
+            <h3>Engine Repairing</h3>
+            <div class="service-dec">
+              Something More intresting about Car Engine Repairing. . . .
+              <p><b>₹ 3000/-</b></p>
+            </div>
+
+            <div class="service-actions">
+              <button class="action-btn" onclick="serviceViewPage(event)">
+                Edit
+              </button>
+              <button class="action-btn" onclick="serviceDelete(event)">
+                Delete
+              </button>
+            </div>
+          </div>
+          <div class="service-card">
+            <img
+              src="/images/mechanic.png"
+              alt="User 1"
+              class="service-avatar"
+            />
+            <h3>Maintenance</h3>
+            <div class="service-dec">
+              Something More intresting about Car Maintenance . . . .
+              <p><b>₹ 600/-</b></p>
+            </div>
+
+            <div class="service-actions">
+              <button class="action-btn" onclick="serviceViewPage(event)">
+                Edit
+              </button>
+              <button class="action-btn" onclick="serviceDelete(event)">
+                Delete
+              </button>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <img
+              src="/images/body-repair.png"
+              alt="User 1"
+              class="service-avatar"
+            />
+            <h3>Body Work</h3>
+            <div class="service-dec">
+              Something More intresting about Car Body Work . . . .
+              <p><b>₹ 9000/-</b></p>
+            </div>
+
+            <div class="service-actions">
+              <button class="action-btn" onclick="serviceViewPage(event)">
+                Edit
+              </button>
+              <button class="action-btn" onclick="serviceDelete(event)">
+                Delete
+              </button>
+            </div>
+          </div>
+          <div class="service-card">
+            <img
+              src="/images/car-painting.png"
+              alt="User 1"
+              class="service-avatar"
+            />
+            <h3>RePaint</h3>
+            <div class="service-dec">
+              Something More intresting about Car RePaint . . . .
+              <p><b>₹ 12000/-</b></p>
+            </div>
+
+            <div class="service-actions">
+              <button class="action-btn" onclick="serviceViewPage(event)">
+                Edit
+              </button>
+              <button class="action-btn" onclick="serviceDelete(event)">
+                Delete
+              </button>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <img src="/images/car.png" alt="User 1" class="service-avatar" />
+            <h3>P U C</h3>
+            <div class="service-dec">
+              Something More intresting about Car P U C . . . .
+              <p><b>₹ 30/-</b></p>
+            </div>
+
+            <div class="service-actions">
+              <button class="action-btn" onclick="serviceViewPage(event)">
+                Edit
+              </button>
+              <button class="action-btn" onclick="serviceDelete(event)">
+                Delete
+              </button>
+            </div>
+          </div>
+          <div class="service-card">
+            <img
+              src="/images/protection.png"
+              alt="User 1"
+              class="service-avatar"
+            />
+            <h3>Insurance</h3>
+            <div class="service-dec">
+              Something More intresting about Car Insurance. . . .
+              <p><b>₹ 9000/-</b></p>
+            </div>
+
+            <div class="service-actions">
+              <button class="action-btn" onclick="serviceViewPage(event)">
+                Edit
+              </button>
+              <button class="action-btn" onclick="serviceDelete(event)">
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer - Section -->
+    <!-- <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <p>&copy; 2024 MyWebsite. All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </footer> -->
+
+    <script src="/index.js"></script>
+  </body>
+</html>

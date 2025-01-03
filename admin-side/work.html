@@ -12,22 +12,81 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
+    <div class="all-work-form-container">
+      <div class="work-form-container" id="work-form">
+        <form id="my-work-form">
+          <span onclick="closeWorkForm()" style="margin-left: 90%"
+            ><i class="fa-solid fa-xmark"></i
+          ></span>
+          <h2>New work</h2>
+
+          <label for="service">Work</label>
+          <select name="workservice" id="workService">
+            <option name="workService" value="Modification">
+              Modification
+            </option>
+            <option name="workService" value="Upgradation">Upgradation</option>
+            <option name="workService" value="Washing">Washing</option>
+            <option name="workService" value="Fullservice">Full Service</option>
+            <option name="workService" value="Generalrepairing">
+              General Repairing
+            </option>
+            <option name="workService" value="Electricalrepairing">
+              Electrical Repairing
+            </option>
+            <option name="workService" value="Enginerepairing">
+              Engine Repairing
+            </option>
+            <option name="workService" value="Maintenance">Maintenance</option>
+            <option name="workService" value="Bodywork">Body Work</option>
+            <option name="workService" value="Repaint">RePaint</option>
+            <option name="workService" value="PUC">PUC</option>
+            <option name="workService" value="Insurance">Insurance</option>
+          </select>
+          <label for="workDec">Work Description</label>
+          <textarea
+            placeholder="Work Description. . ."
+            name="workDec"
+          ></textarea>
+
+
+          
+          <label for="Car Name">Car Name</label>
+          <input type="text" placeholder="Car Name" name="workCarName" />
+          <label for="Car NUmber">Car Number</label>
+          <input type="text" placeholder="Car Number" name="workCarNumber" />
+
+          <label for="workDate">Date</label>
+          <input type="date" placeholder="Select Date" name="workDate" />
+
+          <label for="workStatus">Status</label>
+          <select name="workStatus" id="workStatus">
+            <option value="pending">Pending</option>
+            <option value="inprogess">In progress</option>
+            <option value="done">Done</option>
+          </select>
+          <button id="workAddBtn" onclick="addWorkInWorkList()" type="button">Add</button>
+        </form>
+      </div>
+    </div>
+
     <!-- Header - Section -->
-    <header>
+    <header id="workHeader">
       <div class="logo">
         <a href="#">D M G</a>
       </div>
-      <nav>
+      <nav id="workNav">
         <ul class="nav-links">
           <li><a href="/index.html">Home</a></li>
           <li><a href="#">Work</a></li>
           <li><a href="/admin-side/appointment.html">Appointments</a></li>
           <li><a href="/admin-side/customers.html">Customers</a></li>
-          <li><a href="#">Payment</a></li>
           <li><a href="/admin-side/service.html">Services</a></li>
           <li><a href="/admin-side/work.html">About</a></li>
+          <li><a href="/admin-side/payment.html">Payment</a></li>
           <li><a href="/admin-side/feedback.html">Feedback</a></li>
         </ul>
       </nav>
@@ -38,17 +97,17 @@
       </div>
     </header>
     <!-- Main - Section -->
-    <main class="main-section">
+    <main class="main-section" id="workMainSection">
       <header>
         <div class="wraaper-work">
-          <h3>Work List</h3>
+          <h3>Work</h3>
 
           <span class="functions">
             <span id="refreshwork"
               ><i class="fa-solid fa-rotate-right"></i
             ></span>
-            <span id="addwork"><i class="fa-solid fa-plus"></i></span>
-            
+            <span id="addwork" onclick="openWorkForm()"><i class="fa-solid fa-plus"></i></span>
+
             <span id="sharework"><i class="fa-solid fa-share-nodes"></i></span>
           </span>
         </div>
@@ -61,42 +120,232 @@
         </div>
       </header>
 
-      <section class="content">
-        <div class="content-box">
-          <h1>Work - 1</h1>
+      <section class="content" id="workContent">
+        <div class="work-card">
+          <!--  -->
+          <div class="workCloseBtn">
+            <i class="fa-solid fa-square-xmark"></i>
+          </div>
+          <img
+            src="/images/pngegg.png"
+            alt="Work Image"
+            class="work-card-img"
+          />
+          <div class="work-card-content">
+            <h3>Modification</h3>
+            <h6>Fortuner &nbsp; &nbsp; <span>GJ03 JC 1484</span> </h6>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita
+              corporis reiciendis laborum aliquid, eius
+            </p>
+            <h6>18-2-2024</h6>
+            <div class="work-status-container">
+              <span class="work-status work-pending">Pending</span>
+              <!-- <span class="work-status work-in-progress">In Progress</span> -->
+              <!-- <span class="work-status work-done">Done</span> -->
+            </div>
+          </div>
         </div>
-        <div class="content-box">
-          <h1>Work - 2</h1>
+        <div class="work-card">
+          <!--  -->
+          <div class="workCloseBtn">
+            <i class="fa-solid fa-square-xmark"></i>
+          </div>
+          <img
+            src="/images/pngegg.png"
+            alt="Work Image"
+            class="work-card-img"
+          />
+          <div class="work-card-content">
+            <h3>Engine Repairing</h3>
+            <h6>Naxon &nbsp; &nbsp; <span>GJ03 CJ 1004</span></h6>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita
+              corporis reiciendis laborum aliquid, eius
+            </p>
+            <h6>12-2-2024</h6>
+            <div class="work-status-container">
+              <span class="work-status work-pending">Pending</span>
+              <!-- <span class="work-status work-in-progress">In Progress</span> -->
+              <!-- <span class="work-status work-done">Done</span> -->
+            </div>
+          </div>
         </div>
-        <div class="content-box">
-          <h1>Work - 3</h1>
+        <div class="work-card">
+          <!--  -->
+          <div class="workCloseBtn">
+            <i class="fa-solid fa-square-xmark"></i>
+          </div>
+          <img
+            src="/images/pngegg.png"
+            alt="Work Image"
+            class="work-card-img"
+          />
+          <div class="work-card-content">
+            <h3>Washing / Maintenance</h3>
+            <h6>Innova &nbsp; &nbsp; <span>GJ03 JJ 1111</span></h6>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita
+              corporis reiciendis laborum aliquid, eius
+            </p>
+            <h6>9-2-2024</h6>
+            <div class="work-status-container">
+              <span class="work-status work-pending">Pending</span>
+              <!-- <span class="work-status work-in-progress">In Progress</span> -->
+              <!-- <span class="work-status work-done">Done</span> -->
+            </div>
+          </div>
         </div>
-        <div class="content-box">
-          <h1>Work - 4</h1>
+
+        <div class="work-card">
+          <!--  -->
+          <div class="workCloseBtn">
+            <i class="fa-solid fa-square-xmark"></i>
+          </div>
+          <img
+            src="/images/pngegg.png"
+            alt="Work Image"
+            class="work-card-img"
+          />
+          <div class="work-card-content">
+            <h3>Full Service</h3>
+            <h6>Scorpio &nbsp; &nbsp; <span>GJ05 AA 0303</span></h6>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita
+              corporis reiciendis laborum aliquid, eius
+            </p>
+            <h6>3-2-2024</h6>
+            <div class="work-status-container">
+              <!-- <span class="work-status work-pending">Pending</span> -->
+              <span class="work-status work-in-progress">In Progress</span>
+              <!-- <span class="work-status work-done">Done</span> -->
+            </div>
+          </div>
         </div>
-        <div class="content-box">
-          <h1>Work - 5</h1>
+        <div class="work-card">
+          <!--  -->
+          <div class="workCloseBtn">
+            <i class="fa-solid fa-square-xmark"></i>
+          </div>
+          <img
+            src="/images/pngegg.png"
+            alt="Work Image"
+            class="work-card-img"
+          />
+          <div class="work-card-content">
+            <h3>General Repairing</h3>
+            <h6>Hexa &nbsp; &nbsp; <span>GJ03 FC 0084</span> </h6>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita
+              corporis reiciendis laborum aliquid, eius
+            </p>
+            <h6>1-2-2024</h6>
+            <div class="work-status-container">
+              <!-- <span class="work-status work-pending">Pending</span> -->
+              <span class="work-status work-in-progress">In Progress</span>
+              <!-- <span class="work-status work-done">Done</span> -->
+            </div>
+          </div>
         </div>
-        <div class="content-box">
-          <h1>Work - 6</h1>
+        <div class="work-card">
+          <!--  -->
+          <div class="workCloseBtn">
+            <i class="fa-solid fa-square-xmark"></i>
+          </div>
+          <img
+            src="/images/pngegg.png"
+            alt="Work Image"
+            class="work-card-img"
+          />
+          <div class="work-card-content">
+            <h3>Engine Repairing</h3>
+            <h6>BMW &nbsp; &nbsp; <span>GJ03 BB 8055</span></h6>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita
+              corporis reiciendis laborum aliquid, eius
+            </p>
+            <h6>30-1-2024</h6>
+            <div class="work-status-container">
+              <!-- <span class="work-status work-pending">Pending</span> -->
+              <span class="work-status work-in-progress">In Progress</span>
+              <!-- <span class="work-status work-done">Done</span> -->
+            </div>
+          </div>
         </div>
-        <div class="content-box">
-          <h1>Work - 7</h1>
+        <div class="work-card">
+          <!--  -->
+          <div class="workCloseBtn">
+            <i class="fa-solid fa-square-xmark"></i>
+          </div>
+          <img
+            src="/images/pngegg.png"
+            alt="Work Image"
+            class="work-card-img"
+          />
+          <div class="work-card-content">
+            <h3>Body Work</h3>
+            <h6>Innova &nbsp; &nbsp; <span>GJ03 MF 1011</span></h6>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita
+              corporis reiciendis laborum aliquid, eius
+            </p>
+            <h6>27-1-2024</h6>
+            <div class="work-status-container">
+              <!-- <span class="work-status work-pending">Pending</span>
+                    <span class="work-status work-in-progress">In Progress</span> -->
+              <span class="work-status work-done">Done</span>
+            </div>
+          </div>
         </div>
-        <div class="content-box">
-          <h1>Work - 8</h1>
+        <div class="work-card">
+          <!--  -->
+          <div class="workCloseBtn">
+            <i class="fa-solid fa-square-xmark"></i>
+          </div>
+          <img
+            src="/images/pngegg.png"
+            alt="Work Image"
+            class="work-card-img"
+          />
+          <div class="work-card-content">
+            <h3>Modification</h3>
+            <h6>Jeep &nbsp; &nbsp; <span>GJ03 JJ 0009</span></h6>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita
+              corporis reiciendis laborum aliquid, eius
+            </p>
+            <h6>21-1-2024</h6>
+            <div class="work-status-container">
+              <!-- <span class="work-status work-pending">Pending</span>
+                    <span class="work-status work-in-progress">In Progress</span> -->
+              <span class="work-status work-done">Done</span>
+            </div>
+          </div>
         </div>
-        <div class="content-box">
-          <h1>Work - 9</h1>
-        </div>
-        <div class="content-box">
-          <h1>Work - 10</h1>
-        </div>
-        <div class="content-box">
-          <h1>Work - 11</h1>
-        </div>
-        <div class="content-box">
-          <h1>Work - 12</h1>
+        <div class="work-card">
+          <!--  -->
+          <div class="workCloseBtn">
+            <i class="fa-solid fa-square-xmark"></i>
+          </div>
+          <img
+            src="/images/pngegg.png"
+            alt="Work Image"
+            class="work-card-img"
+          />
+          <div class="work-card-content">
+            <h3>Repaint</h3>
+            <h6>Swift &nbsp; &nbsp; <span>GJ03 SJ 2018</span></h6>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita
+              corporis reiciendis laborum aliquid, eius
+            </p>
+            <h6>20-1-2024</h6>
+            <div class="work-status-container">
+              <!-- <span class="work-status work-pending">Pending</span>
+                    <span class="work-status work-in-progress">In Progress</span> -->
+              <span class="work-status work-done">Done</span>
+            </div>
+          </div>
         </div>
       </section>
     </main>

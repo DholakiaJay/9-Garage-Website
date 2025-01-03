@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      .payment-card {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: start;
+        border: 1px solid silver;
+        color: white;
+        border-radius: 6px;
+        padding: 12px;
+        /* background:#282828; */
+        background: linear-gradient(90deg, #282828ec 100%, #282828 100%);
+      }
+      .balance {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .balance-amount {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        gap: 0.3rem;
+      }
+
+      .dont-view-balance {
+        display: none;
+      }
+      .payment-closebtn {
+        align-self: end;
+        font-size: larger;
+      }
+
+      .payment-card span {
+        color: silver;
+      }
+      .payment-card b {
+        color: whitesmoke;
+      }
+      .payment-card i {
+        color: rgb(185, 251, 248);
+      }
+      .payment-card i:hover {
+        transition: all 300ms;
+        color: orange;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div
+      class="container-fuild h-100 w-100 border border-1 p-3 d-flex flex-column justify-content-center align-items-center"
+    >
+      <div class="row w-100 p-1 rounded">
+        <h1>Online Payment</h1>
+        <div class="col-12 payment-card col-lg-3">
+          <span class="payment-closebtn" onclick="closePaymentCard()"
+            ><i class="fa-solid fa-square-xmark"></i
+          ></span>
+          <span
+            >Received : <b>300/-</b> via
+            <b> <i class="fa-solid fa-mobile-screen-button"></i> PhonePay</b>
+          </span>
+          <span>Time : <b>03:06 PM</b></span>
+          <span class="balance">
+            <span>Check Balance : </span>
+            <span class="view-balance" onclick="viewBalance(event)"
+              ><i class="fa-solid fa-eye"></i
+            ></span>
+            <span class="dont-view-balance" onclick="dontViewBalance(event)"
+              ><i class="fa-solid fa-eye-slash"></i
+            ></span>
+            <span class="balance-amount"
+              ><i class="fa-solid fa-indian-rupee-sign"></i
+              ><b>3,60,99999</b></span
+            >
+          </span>
+        </div>
+        <div class="col-12 payment-card col-lg-3">
+            <span class="payment-closebtn" onclick="closePaymentCard()"
+              ><i class="fa-solid fa-square-xmark"></i
+            ></span>
+            <span
+              >Received : <b>300/-</b> via
+              <b> <i class="fa-solid fa-mobile-screen-button"></i> PhonePay</b>
+            </span>
+            <span>Time : <b>03:06 PM</b></span>
+            <span class="balance">
+              <span>Check Balance : </span>
+              <span class="view-balance" onclick="viewBalance(event)"
+                ><i class="fa-solid fa-eye"></i
+              ></span>
+              <span class="dont-view-balance" onclick="dontViewBalance(event)"
+                ><i class="fa-solid fa-eye-slash"></i
+              ></span>
+              <span class="balance-amount"
+                ><i class="fa-solid fa-indian-rupee-sign"></i
+                ><b>3,60,99999</b></span
+              >
+            </span>
+          </div>
+          <div class="col-12 payment-card col-lg-3">
+            <span class="payment-closebtn" onclick="closePaymentCard()"
+              ><i class="fa-solid fa-square-xmark"></i
+            ></span>
+            <span
+              >Received : <b>300/-</b> via
+              <b> <i class="fa-solid fa-mobile-screen-button"></i> PhonePay</b>
+            </span>
+            <span>Time : <b>03:06 PM</b></span>
+            <span class="balance">
+              <span>Check Balance : </span>
+              <span class="view-balance" onclick="viewBalance(event)"
+                ><i class="fa-solid fa-eye"></i
+              ></span>
+              <span class="dont-view-balance" onclick="dontViewBalance(event)"
+                ><i class="fa-solid fa-eye-slash"></i
+              ></span>
+              <span class="balance-amount"
+                ><i class="fa-solid fa-indian-rupee-sign"></i
+                ><b>3,60,99999</b></span
+              >
+            </span>
+          </div>
+          <div class="col-12 payment-card col-lg-3">
+            <span class="payment-closebtn" onclick="closePaymentCard()"
+              ><i class="fa-solid fa-square-xmark"></i
+            ></span>
+            <span
+              >Received : <b>300/-</b> via
+              <b> <i class="fa-solid fa-mobile-screen-button"></i> PhonePay</b>
+            </span>
+            <span>Time : <b>03:06 PM</b></span>
+            <span class="balance">
+              <span>Check Balance : </span>
+              <span class="view-balance" onclick="viewBalance(event)"
+                ><i class="fa-solid fa-eye"></i
+              ></span>
+              <span class="dont-view-balance" onclick="dontViewBalance(event)"
+                ><i class="fa-solid fa-eye-slash"></i
+              ></span>
+              <span class="balance-amount"
+                ><i class="fa-solid fa-indian-rupee-sign"></i
+                ><b>3,60,99999</b></span
+              >
+            </span>
+          </div>
+              
+      </div>
+      <div class="row w-100 p-1 rounded">
+        <h1>Bank Transaction</h1>
+        <div class="col-12 payment-card col-lg-3">
+          <span class="payment-closebtn" onclick="closePaymentCard()"
+            ><i class="fa-solid fa-square-xmark"></i
+          ></span>
+          <span
+            >Received : <b>300/-</b> via
+            <b> <i class="fa-solid fa-mobile-screen-button"></i> PhonePay</b>
+          </span>
+          <span>Time : <b>03:06 PM</b></span>
+          <span class="balance">
+            <span>Check Balance : </span>
+            <span class="view-balance" onclick="viewBalance(event)"
+              ><i class="fa-solid fa-eye"></i
+            ></span>
+            <span class="dont-view-balance" onclick="dontViewBalance(event)"
+              ><i class="fa-solid fa-eye-slash"></i
+            ></span>
+            <span class="balance-amount"
+              ><i class="fa-solid fa-indian-rupee-sign"></i
+              ><b>3,60,99999</b></span
+            >
+          </span>
+        </div>
+        <div class="col-12 payment-card col-lg-3">
+            <span class="payment-closebtn" onclick="closePaymentCard()"
+              ><i class="fa-solid fa-square-xmark"></i
+            ></span>
+            <span
+              >Received : <b>300/-</b> via
+              <b> <i class="fa-solid fa-mobile-screen-button"></i> PhonePay</b>
+            </span>
+            <span>Time : <b>03:06 PM</b></span>
+            <span class="balance">
+              <span>Check Balance : </span>
+              <span class="view-balance" onclick="viewBalance(event)"
+                ><i class="fa-solid fa-eye"></i
+              ></span>
+              <span class="dont-view-balance" onclick="dontViewBalance(event)"
+                ><i class="fa-solid fa-eye-slash"></i
+              ></span>
+              <span class="balance-amount"
+                ><i class="fa-solid fa-indian-rupee-sign"></i
+                ><b>3,60,99999</b></span
+              >
+            </span>
+          </div>
+          <div class="col-12 payment-card col-lg-3">
+            <span class="payment-closebtn" onclick="closePaymentCard()"
+              ><i class="fa-solid fa-square-xmark"></i
+            ></span>
+            <span
+              >Received : <b>300/-</b> via
+              <b> <i class="fa-solid fa-mobile-screen-button"></i> PhonePay</b>
+            </span>
+            <span>Time : <b>03:06 PM</b></span>
+            <span class="balance">
+              <span>Check Balance : </span>
+              <span class="view-balance" onclick="viewBalance(event)"
+                ><i class="fa-solid fa-eye"></i
+              ></span>
+              <span class="dont-view-balance" onclick="dontViewBalance(event)"
+                ><i class="fa-solid fa-eye-slash"></i
+              ></span>
+              <span class="balance-amount"
+                ><i class="fa-solid fa-indian-rupee-sign"></i
+                ><b>3,60,99999</b></span
+              >
+            </span>
+          </div>
+          <div class="col-12 payment-card col-lg-3">
+            <span class="payment-closebtn" onclick="closePaymentCard()"
+              ><i class="fa-solid fa-square-xmark"></i
+            ></span>
+            <span
+              >Received : <b>300/-</b> via
+              <b> <i class="fa-solid fa-mobile-screen-button"></i> PhonePay</b>
+            </span>
+            <span>Time : <b>03:06 PM</b></span>
+            <span class="balance">
+              <span>Check Balance : </span>
+              <span class="view-balance" onclick="viewBalance(event)"
+                ><i class="fa-solid fa-eye"></i
+              ></span>
+              <span class="dont-view-balance" onclick="dontViewBalance(event)"
+                ><i class="fa-solid fa-eye-slash"></i
+              ></span>
+              <span class="balance-amount"
+                ><i class="fa-solid fa-indian-rupee-sign"></i
+                ><b>3,60,99999</b></span
+              >
+            </span>
+          </div>
+              
+      </div>
+
+      
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function viewBalance(event) {
+        let viewBalance = event.target.parentElement.parentElement.children[1];
+        let dontViewBalance =
+          event.target.parentElement.parentElement.children[2];
+        let balanceAmount =
+          event.target.parentElement.parentElement.children[3];
+        console.log(event.target.parentElement.parentElement.children);
+        console.log(viewBalance, dontViewBalance, balanceAmount);
+        viewBalance.style.cssText = `transition: all 300ms; display:none`;
+        balanceAmount.style.cssText = `transition: all 300ms; display:flex`;
+        dontViewBalance.style.cssText = `transition: all 300ms; display:flex`;
+      }
+
+      function dontViewBalance(event) {
+        let viewBalance = event.target.parentElement.parentElement.children[1];
+        let dontViewBalance =
+          event.target.parentElement.parentElement.children[2];
+        let balanceAmount =
+          event.target.parentElement.parentElement.children[3];
+        viewBalance.style.cssText = `transition: all 300ms; display:flex`;
+        balanceAmount.style.cssText = `transition: all 300ms; display:none`;
+        dontViewBalance.style.cssText = `transition: all 300ms; display:none`;
+      }
+      function closePaymentCard()
+      {
+        paymentCard = event.target.parentElement.parentElement;
+        paymentCard.style.cssText=`display:none;`
+
+      }
+    </script>
+  </body>
+</html>
+ -->
+
+
+
+
+
+
+    <script>
+            //   function viewBalance(event) {
+    //     let viewBalance = document.getElementsByClassName("view-balance")[0];
+    //     let dontViewBalance =
+    //       document.getElementsByClassName("dont-view-balance")[0];
+    //     let balanceAmount =
+    //       document.getElementsByClassName("balance-amount")[0];
+
+    //     viewBalance.style.cssText = `display:none`;
+    //     balanceAmount.style.cssText = `display:flex`;
+    //     dontViewBalance.style.cssText = `display:flex`;
+    //   }
+
+    </script>
+</body>
+</html>

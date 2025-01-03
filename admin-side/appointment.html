@@ -12,22 +12,71 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
+    <div class="all-app-form-container">
+      <div class="app-form-container" id="app-form">
+        
+        
+        <form id="my-app-form">
+          <span onclick="closeAppointmentForm()" style="margin-left: 90%;"><i class="fa-solid fa-xmark"></i></span>
+          <h2>Booking Appointment</h2>
+          
+          <label for="appcustworkcat"> Work : </label>
+          <select name="work" id="appcustworkcat">
+            <option value="Modification">Modification</option>
+            <option value="Upgrade">Upgrade</option>
+            <option value="Washing">Washing</option>
+            <option value="Full Service">Full Service</option>
+            <option value="General Repairing">General Repairing</option>
+            <option value="Electric Repairing">Electric Repairing</option>
+            <option value="Engine Repairing">Engine Repairing</option>
+            <option value="Maitenance">Maitenance</option>
+            <option value="Body Work">Body Work</option>
+            <option value="RePaint">RePaint</option>
+            <option value="PUC">PUC</option>
+            <option value="Insurance">Insurance</option>
+          </select>
+
+          <label for="name">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            name="appcustname"
+            required
+            placeholder="Enter your full name"
+          />
+
+          <label for="booking-date">Date</label>
+          <input type="date" name="appcustdate" />
+
+          <label for="booking-time">Time</label>
+          <input type="time" name="appcusttime" />
+
+          <label for="car">Car Name</label>
+          <input type="text" placeholder="Enter Car Name" name="appcustcar"/>
+
+          <label for="number">Contact Number</label>
+          <input type="tel" placeholder="Enter Mobile Number" name="appcustnumber" />
+          <button type="button" onclick="addAppointmentBtn()">Book</button>
+        </form>
+      </div>
+    </div>
     <!-- Header - Section -->
-    <header>
+    <header id="appHeader">
       <div class="logo">
         <a href="#">D M G</a>
       </div>
-      <nav>
+      <nav id="appNav">
         <ul class="nav-links">
           <li><a href="/index.html">Home</a></li>
           <li><a href="/admin-side/work.html">Work</a></li>
           <li><a href="#">Appointments</a></li>
           <li><a href="/admin-side/customers.html">Customers</a></li>
-          <li><a href="#">Payment</a></li>
           <li><a href="/admin-side/service.html">Services</a></li>
           <li><a href="/admin-side/about.html">About</a></li>
+          <li><a href="/admin-side/payment.html">Payment</a></li>
           <li><a href="/admin-side/feedback.html">Feedback</a></li>
         </ul>
       </nav>
@@ -38,17 +87,19 @@
       </div>
     </header>
     <!-- Main - Section -->
-    <main class="main-section">
+    <main class="main-section" id="appMainSection">
       <header>
         <div class="wraaper-work">
-          <h3>Appointment List</h3>
+          <h3>Appointments</h3>
 
           <span class="functions">
             <span id="refreshwork"
               ><i class="fa-solid fa-rotate-right"></i
             ></span>
-            <span id="addwork"><i class="fa-solid fa-plus"></i></span>
-            
+            <span id="addwork" onclick="openBookingForm()"
+              ><i class="fa-solid fa-plus"></i
+            ></span>
+
             <span id="sharework"><i class="fa-solid fa-share-nodes"></i></span>
           </span>
         </div>
@@ -61,57 +112,315 @@
         </div>
       </header>
 
-      <section class="content">
-        <div class="appoint-content-box">
-          <h1>Appointment - 1</h1>
+      <section class="content" id="appContent">
+        <div class="appointment-card">
+          <div class="header">
+            <h2><i class="fa-solid fa-gear"></i> &nbsp; <span>Body Work</span></h2>
+          </div>
+          <div class="booking-card-content">
+            <div class="booking-card-row">
+              <label for="name"><i class="fa-solid fa-user"></i></label>
+              <p>Pavan</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="date"><i class="fa-solid fa-calendar-days"></i></label>
+              <p>January 22, 2024</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="time"><i class="fa-regular fa-clock"></i></label>
+              <p>10:00 AM</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="car"><i class="fa-solid fa-car"></i></label>
+              <p>Innova</p>
+            </div>
+          </div>
+          <div class="footer">
+            <p>
+              For more information,contact at:<a href="#">
+                +91 XXXXX99999</a>
+            </p>
+          </div>
+          <div class="button-container">
+            <button class="btn accept">Accept</button>
+            <button class="btn cancel" onclick="cancleAppointment(event)">
+              Cancel
+            </button>
+          </div>
         </div>
-        
-        <div class="appoint-content-box">
-            <h1>Appointment - 2</h1>
+        <div class="appointment-card">
+          <div class="header">
+           <h2><i class="fa-solid fa-gear"></i> &nbsp; <span>Washing</span></h2>
           </div>
-          
-        <div class="appoint-content-box">
-            <h1>Appointment - 3</h1>
+          <div class="booking-card-content">
+            <div class="booking-card-row">
+              <label for="name"><i class="fa-solid fa-user"></i></label>
+              <p>Vansh</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="date"><i class="fa-solid fa-calendar-days"></i></label>
+              <p>January 20, 2024</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="time"><i class="fa-regular fa-clock"></i></label>
+              <p>11:00 AM</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="car"><i class="fa-solid fa-car"></i></label>
+              <p>Swift</p>
+            </div>
           </div>
-          
-        <div class="appoint-content-box">
-            <h1>Appointment - 4</h1>
+          <div class="footer">
+            <p>
+              For more information, contact at: <a href="#">+91 XXXXX91219</a>
+            </p>
           </div>
-          
-        <div class="appoint-content-box">
-            <h1>Appointment - 5</h1>
+          <div class="button-container">
+            <button class="btn accept">Accept</button>
+            <button class="btn cancel" onclick="cancleAppointment(event)">
+              Cancel
+            </button>
           </div>
-          
-        <div class="appoint-content-box">
-            <h1>Appointment - 6</h1>
+        </div>
+        <div class="appointment-card">
+          <div class="header">
+           <h2><i class="fa-solid fa-gear"></i> &nbsp; <span>Modification</span></h2>
           </div>
-          
-        <div class="appoint-content-box">
-            <h1>Appointment - 7</h1>
+          <div class="booking-card-content">
+            <div class="booking-card-row">
+              <label for="name"><i class="fa-solid fa-user"></i></label>
+              <p>Krunal</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="date"><i class="fa-solid fa-calendar-days"></i></label>
+              <p>January 19, 2024</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="time"><i class="fa-regular fa-clock"></i></label>
+              <p>09:00 AM</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="car"><i class="fa-solid fa-car"></i></label>
+              <p>Hexa</p>
+            </div>
           </div>
-          
-        <div class="appoint-content-box">
-            <h1>Appointment - 8</h1>
+          <div class="footer">
+            <p>
+              For more information, contact at: <a href="#">+91 XXXXX90009</a>
+            </p>
           </div>
-          
-        <div class="appoint-content-box">
-            <h1>Appointment - 9</h1>
+          <div class="button-container">
+            <button class="btn accept">Accept</button>
+            <button class="btn cancel" onclick="cancleAppointment(event)">
+              Cancel
+            </button>
           </div>
-          
-        <div class="appoint-content-box">
-            <h1>Appointment - 10</h1>
+        </div>
+        <div class="appointment-card">
+          <div class="header">
+           <h2><i class="fa-solid fa-gear"></i> &nbsp; <span>Engine</span></h2>
           </div>
-          
-        <div class="appoint-content-box">
-            <h1>Appointment - 11</h1>
+          <div class="booking-card-content">
+            <div class="booking-card-row">
+              <label for="name"><i class="fa-solid fa-user"></i></label>
+              <p>Shiv</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="date"><i class="fa-solid fa-calendar-days"></i></label>
+              <p>January 18, 2024</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="time"><i class="fa-regular fa-clock"></i></label>
+              <p>12:00 AM</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="car"><i class="fa-solid fa-car"></i></label>
+              <p>Tigor</p>
+            </div>
           </div>
-          
-        <div class="appoint-content-box">
-            <h1>Appointment - 12</h1>
+          <div class="footer">
+            <p>
+              For more information, contact at: <a href="#">+91 XXXXX91222</a>
+            </p>
           </div>
+          <div class="button-container">
+            <button class="btn accept">Accept</button>
+            <button class="btn cancel" onclick="cancleAppointment(event)">
+              Cancel
+            </button>
+          </div>
+        </div>
+        <div class="appointment-card">
+          <div class="header">
+           <h2><i class="fa-solid fa-gear"></i> &nbsp; <span>Modification</span></h2>
+          </div>
+          <div class="booking-card-content">
+            <div class="booking-card-row">
+              <label for="name"><i class="fa-solid fa-user"></i></label>
+              <p>Ganesh</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="date"><i class="fa-solid fa-calendar-days"></i></label>
+              <p>January 17, 2024</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="time"><i class="fa-regular fa-clock"></i></label>
+              <p>08:00 AM</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="car"><i class="fa-solid fa-car"></i></label>
+              <p>Innova</p>
+            </div>
+          </div>
+          <div class="footer">
+            <p>
+              For more information, contact at: <a href="#">+91 XXXXX11111</a>
+            </p>
+          </div>
+          <div class="button-container">
+            <button class="btn accept">Accept</button>
+            <button class="btn cancel" onclick="cancleAppointment(event)">
+              Cancel
+            </button>
+          </div>
+        </div>
+        <div class="appointment-card">
+          <div class="header">
+           <h2><i class="fa-solid fa-gear"></i> &nbsp; <span>Modification</span></h2>
+          </div>
+          <div class="booking-card-content">
+            <div class="booking-card-row">
+              <label for="name"><i class="fa-solid fa-user"></i></label>
+              <p>Om</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="date"><i class="fa-solid fa-calendar-days"></i></label>
+              <p>January 17, 2024</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="time"><i class="fa-regular fa-clock"></i></label>
+              <p>06:00 AM</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="car"><i class="fa-solid fa-car"></i></label>
+              <p>Seltos</p>
+            </div>
+          </div>
+          <div class="footer">
+            <p>
+              For more information, contact at: <a href="#">+91 XXXXX33338</a>
+            </p>
+          </div>
+          <div class="button-container">
+            <button class="btn accept">Accept</button>
+            <button class="btn cancel" onclick="cancleAppointment(event)">
+              Cancel
+            </button>
+          </div>
+        </div>
 
-
-        
+        <div class="appointment-card">
+          <div class="header">
+           <h2><i class="fa-solid fa-gear"></i> &nbsp; <span>Repaint</span></h2>
+          </div>
+          <div class="booking-card-content">
+            <div class="booking-card-row">
+              <label for="name"><i class="fa-solid fa-user"></i></label>
+              <p>Kishan</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="date"><i class="fa-solid fa-calendar-days"></i></label>
+              <p>January 16, 2024</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="time"><i class="fa-regular fa-clock"></i></label>
+              <p>01:00 PM</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="car"><i class="fa-solid fa-car"></i></label>
+              <p>Honda-City</p>
+            </div>
+          </div>
+          <div class="footer">
+            <p>
+              For more information, contact at: <a href="#">+91 XXXXX00338</a>
+            </p>
+          </div>
+          <div class="button-container">
+            <button class="btn accept">Accept</button>
+            <button class="btn cancel" onclick="cancleAppointment(event)">
+              Cancel
+            </button>
+          </div>
+        </div>
+        <div class="appointment-card">
+          <div class="header">
+           <h2><i class="fa-solid fa-gear"></i> &nbsp; <span>Upgrade</span></h2>
+          </div>
+          <div class="booking-card-content">
+            <div class="booking-card-row">
+              <label for="name"><i class="fa-solid fa-user"></i></label>
+              <p>Krishna</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="date"><i class="fa-solid fa-calendar-days"></i></label>
+              <p>January 15, 2024</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="time"><i class="fa-regular fa-clock"></i></label>
+              <p>04:00 PM</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="car"><i class="fa-solid fa-car"></i></label>
+              <p>Jeep</p>
+            </div>
+          </div>
+          <div class="footer">
+            <p>
+              For more information, contact at: <a href="#">+91 XXXXX00038</a>
+            </p>
+          </div>
+          <div class="button-container">
+            <button class="btn accept">Accept</button>
+            <button class="btn cancel" onclick="cancleAppointment(event)">
+              Cancel
+            </button>
+          </div>
+        </div>
+        <div class="appointment-card">
+          <div class="header">
+           <h2><i class="fa-solid fa-gear"></i> &nbsp; <span>Washing</span></h2>
+          </div>
+          <div class="booking-card-content">
+            <div class="booking-card-row">
+              <label for="name"><i class="fa-solid fa-user"></i></label>
+              <p>JayKishan</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="date"><i class="fa-solid fa-calendar-days"></i></label>
+              <p>January 14, 2024</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="time"><i class="fa-regular fa-clock"></i></label>
+              <p>03:00 PM</p>
+            </div>
+            <div class="booking-card-row">
+              <label for="car"><i class="fa-solid fa-car"></i></label>
+              <p>Indigo</p>
+            </div>
+          </div>
+          <div class="footer">
+            <p>
+              For more information, contact at: <a href="#">+91 XXXXX00005</a>
+            </p>
+          </div>
+          <div class="button-container">
+            <button class="btn accept">Accept</button>
+            <button class="btn cancel" onclick="cancleAppointment(event)">
+              Cancel
+            </button>
+          </div>
+        </div>
       </section>
     </main>
 
